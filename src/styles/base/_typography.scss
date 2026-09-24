@@ -1,0 +1,41 @@
+@use '../abstracts/variables' as abs;
+
+@font-face {
+    font-family: 'Poppins';
+    src: url('/assets/fonts/Poppins-Bold.ttf') format('truetype');
+    font-weight: map-get(abs.$font-weight, bold);
+}
+
+@font-face {
+    font-family: 'Poppins';
+    src: url('/assets/fonts/Poppins-Light.ttf') format('truetype');
+    font-weight: map-get(abs.$font-weight, light);
+}
+
+@font-face {
+    font-family: 'Poppins';
+    src: url('/assets/fonts/Poppins-Medium.ttf') format('truetype');
+    font-weight: map-get(abs.$font-weight, medium);
+}
+
+@font-face {
+    font-family: 'Poppins';
+    src: url('/assets/fonts/Poppins-Regular.ttf') format('truetype');
+    font-weight: map-get(abs.$font-weight, regular);
+}
+
+@font-face {
+    font-family: 'JosefinSans';
+    src: url('/assets/fonts/JosefinSans-Bold.ttf') format('truetype');
+    font-weight: map-get(abs.$font-weight, bold);
+}
+
+@font-face {
+    font-family: 'JosefinSans';
+    src: url('/assets/fonts/JosefinSans-Regular.ttf') format('truetype');
+    font-weight: map-get(abs.$font-weight, regular);
+}
+
+body {
+    font-family: 'Poppins';
+}
