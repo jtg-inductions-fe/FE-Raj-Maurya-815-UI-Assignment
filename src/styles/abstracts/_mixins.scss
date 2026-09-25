@@ -1,4 +1,4 @@
-@use 'sass::map';
+@use 'sass:map';
 @use './variables' as var;
 
 @mixin respond-to($breakpoint-passed) {
@@ -10,5 +10,15 @@
 @mixin flex-center {
     display: flex;
     justify-content: center;
+    align-items: center;
+}
+
+@mixin flex-space-between {
+    display: flex;
+    justify-content: space-between;
+}
+
+@mixin flex-alignitem-center {
+    display: flex;
     align-items: center;
 }

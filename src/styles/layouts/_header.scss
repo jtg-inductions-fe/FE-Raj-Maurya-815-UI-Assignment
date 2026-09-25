@@ -1,0 +1,224 @@
+@use '../abstracts/mixins' as mxn;
+@use '../abstracts/variables' as var;
+@use '../abstracts/colors' as clr;
+
+.header {
+    @include mxn.flex-space-between;
+    height: 80px;
+    padding: 26px 24px 23px 26px;
+    position: relative;
+
+    &__action {
+        @include mxn.flex-space-between;
+        gap: 8px;
+        width: 168.88px;
+        height: 44px;
+        padding: 6px 6px 0px 8px;
+
+        span {
+            display: none;
+        }
+    }
+
+    &__left {
+        @include mxn.flex-space-between;
+        width: 112px;
+        height: 48px;
+    }
+
+    &__action-item {
+        min-width: 0;
+    }
+
+    &__logo-name--alura,
+    &__logo-name--books {
+        display: none;
+    }
+
+    &__nav {
+        display: none;
+    }
+
+    &__nav--open {
+        display: block;
+        position: absolute;
+        top: 100%;
+        left: 0%;
+        width: 300px;
+        background-color: clr.$white;
+        button {
+            width: 250px;
+            height: 56px;
+            margin-left: 24px;
+            text-align: left;
+            text-transform: capitalize;
+            font-weight: map-get(var.$font-weight, bold);
+            color: clr.$accent;
+        }
+    }
+
+    &__categories-submenu {
+        display: none;
+    }
+
+    &__categories-submenu--open {
+        display: block;
+        li {
+            width: 300px;
+            height: 56px;
+            margin-left: 24px;
+        }
+        a {
+            width: 100%;
+            display: block;
+            line-height: 56px;
+            text-transform: uppercase;
+            -webkit-background-clip: text;
+            background-clip: text;
+            background: -webkit-linear-gradient(
+                clr.$indigo-primary,
+                clr.$indigo-secondary
+            );
+            -webkit-background-clip: text;
+            background-clip: text;
+            -webkit-text-fill-color: transparent;
+            color: transparent;
+        }
+    }
+
+    @include mxn.respond-to(tablet) {
+        padding: 18px 80px;
+
+        &__nav {
+            min-width: 437px;
+            display: block;
+            height: 44px;
+        }
+
+        &__menu {
+            width: 100%;
+            height: 100%;
+            @include mxn.flex-space-between;
+
+            button {
+                text-transform: uppercase;
+                height: 100%;
+                padding-left: 10px;
+                padding-right: 32px;
+                line-height: 100%;
+                position: relative;
+
+                &:hover,
+                &--active {
+                    background: clr.$gradient-indigo;
+                    color: clr.$white;
+                }
+            }
+        }
+
+        &__categories-button {
+            &--active {
+                background: clr.$gradient-indigo;
+                color: clr.$white;
+            }
+        }
+
+        &__left {
+            width: 264px;
+        }
+        &__hamburger {
+            display: none;
+        }
+
+        &__action-item:first-child {
+            display: none;
+        }
+
+        &__logo {
+            @include mxn.flex-center;
+            gap: 11px;
+        }
+
+        &__logo-name {
+            display: flex;
+            font-size: 30px;
+            font-family: 'JosefinSans';
+            padding-top: 10px;
+            &--alura {
+                display: inline;
+                font-weight: map-get(var.$font-weight, bold);
+            }
+            &--books {
+                display: inline;
+                font-weight: map-get(var.$font-weight, regular);
+            }
+        }
+        &__action {
+            width: 131px;
+            padding-right: 0px;
+        }
+
+        &__categories-submenu--open {
+            display: block;
+            position: absolute;
+            background-color: clr.$white;
+
+            width: 181px;
+            li {
+                width: 100%;
+                margin-left: 0px;
+            }
+            a {
+                padding-left: 24px;
+                height: 64px;
+                @include mxn.flex-alignitem-center;
+                width: 100%;
+
+                &:hover {
+                    background: clr.$gradient-indigo;
+                    -webkit-text-fill-color: clr.$white;
+                }
+            }
+        }
+    }
+
+    @include mxn.respond-to(desktop) {
+        padding-top: 20px;
+
+        &__menu {
+            button {
+                padding-right: 34px;
+            }
+        }
+        &__left {
+            height: 40px;
+        }
+
+        &__logo {
+            margin-right: 58px;
+        }
+        &__nav {
+            width: 932px;
+        }
+
+        &__menu {
+            justify-content: flex-start;
+        }
+
+        &__action {
+            width: 372px;
+            &-item a {
+                @include mxn.flex-alignitem-center;
+                gap: 8px;
+            }
+
+            span {
+                display: inline;
+                padding-bottom: 4px;
+                text-transform: capitalize;
+                font-size: 20px;
+                font-weight: map-get(var.$font-weight, regular);
+            }
+        }
+    }
+}
