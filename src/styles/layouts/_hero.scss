@@ -1,0 +1,108 @@
+@use '../abstracts/mixins' as mxn;
+@use '../abstracts/variables' as var;
+@use '../abstracts/colors' as clr;
+
+.hero {
+    margin-top: 1px;
+    height: 215px;
+    background: clr.$gradient-indigo;
+    display: flex;
+    flex-direction: column;
+    // justify-content: st;
+    align-items: center;
+
+    h2 {
+        margin-top: 32px;
+        margin-bottom: 8px;
+        color: clr.$white;
+        font-weight: map-get(var.$font-weight, bold);
+        font-size: 18px;
+    }
+
+    p {
+        height: 48px;
+        margin-bottom: 24px;
+        width: 316px;
+        font-weight: map-get(var.$font-weight, medium);
+        color: clr.$white;
+        text-align: center;
+    }
+
+    &__search {
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+        border: 1px solid clr.$white;
+        border-radius: 24px;
+        padding: 0 px;
+        gap: 10px;
+        height: 44px;
+        width: 380px;
+        cursor: text;
+
+        img {
+            margin-left: 74.5px;
+        }
+
+        input {
+            width: 100%;
+            font-size: 14px;
+            border: none;
+            outline: none;
+            height: 21px;
+            font-weight: map-get(var.$font-weight, regular);
+            background: transparent;
+            color: clr.$white;
+            &::placeholder {
+                color: clr.$white;
+            }
+            &::-webkit-search-cancel-button {
+                cursor: pointer;
+                padding-right: 20px;
+            }
+        }
+    }
+
+    @include mxn.respond-to(tablet) {
+        margin-top: 0px;
+        height: 330px;
+
+        h2 {
+            margin-top: 84px;
+            font-size: 36px;
+            margin-bottom: 2px;
+            height: 54px;
+            // width: 1008px;
+        }
+
+        p {
+            height: 24px;
+            width: 479px;
+            margin-bottom: 26px;
+        }
+
+        &__search {
+            height: 56px;
+            width: 476px;
+
+            img {
+                margin-left: 108.5px;
+            }
+
+            input {
+                font-size: 16px;
+                height: 24px;
+            }
+        }
+    }
+
+    @include mxn.respond-to(desktop) {
+        &__search {
+            width: 586px;
+
+            img {
+                margin-left: 163.5px;
+            }
+        }
+    }
+}
