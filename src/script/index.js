@@ -21,7 +21,7 @@ document.addEventListener('click', (e) => {
 });
 
 window.addEventListener('resize', () => {
-    if (window.innerWidth >= 428) {
+    if (window.innerWidth >= 1024) {
         const nav = document.querySelector('.header__nav--open');
         const categorySubmenu = document.querySelector(
             '.header__categories-submenu--open',
