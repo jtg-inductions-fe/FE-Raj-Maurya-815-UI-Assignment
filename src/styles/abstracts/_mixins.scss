@@ -1,9 +1,13 @@
-@use 'sass::map';
+@use 'sass:map';
 @use './variables' as var;
 
 @mixin respond-to($breakpoint-passed) {
-    @media (min-width: map.get(var.$breakpoints,$breakpoint-passed)) {
-        @content;
+    @if map.has-key(var.$breakpoints, $breakpoint-passed) {
+        @media (min-width: map.get(var.$breakpoints,$breakpoint-passed)) {
+            @content;
+        }
+    } @else {
+        @error " breakpoint- #{$breakpoint-passed}, doesn't exist";
     }
 }
 
