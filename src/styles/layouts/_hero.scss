@@ -8,22 +8,18 @@
     background: clr.$gradient-indigo;
     display: flex;
     flex-direction: column;
-    // justify-content: st;
     align-items: center;
 
     h2 {
         margin-top: 32px;
         margin-bottom: 8px;
         color: clr.$white;
-        font-weight: map-get(var.$font-weight, bold);
-        font-size: 18px;
     }
 
     p {
         height: 48px;
         margin-bottom: 24px;
         width: 316px;
-        font-weight: map-get(var.$font-weight, medium);
         color: clr.$white;
         text-align: center;
     }
@@ -69,10 +65,8 @@
 
         h2 {
             margin-top: 84px;
-            font-size: 36px;
             margin-bottom: 2px;
             height: 54px;
-            // width: 1008px;
         }
 
         p {
