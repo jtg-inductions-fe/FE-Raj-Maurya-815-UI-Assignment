@@ -1,0 +1,41 @@
+@use '../abstracts/mixins' as mxn;
+@use '../abstracts/variables' as var;
+@use '../abstracts/colors' as clr;
+
+.swiper-pagination {
+    position: relative !important;
+    bottom: 0px !important;
+    margin-top: 3px;
+    margin-bottom: 8px;
+}
+
+.swiper-button-prev,
+.swiper-button-next {
+    display: none !important;
+}
+
+.swiper-slide {
+    height: 249px !important;
+
+    img {
+        height: 100%;
+        width: 100%;
+        object-fit: contain;
+    }
+}
+
+.swiper-pagination-bullet-active {
+    background-color: clr.$indigo-primary !important;
+}
+
+@include mxn.respond-to(tablet) {
+    .swiper {
+        width: 801px;
+        height: 416px;
+    }
+
+    .swiper-button-prev,
+    .swiper-button-next {
+        display: flex !important;
+    }
+}

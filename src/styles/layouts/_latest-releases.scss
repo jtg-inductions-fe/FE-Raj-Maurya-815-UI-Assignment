@@ -1,0 +1,21 @@
+@use '../abstracts/mixins' as mxn;
+@use '../abstracts/variables' as var;
+@use '../abstracts/colors' as clr;
+
+.latest-releases {
+    margin-top: 20px;
+
+    &__heading {
+        font-size: 18px;
+        font-weight: map-get(var.$font-weight, bold);
+        text-transform: uppercase;
+        text-align: center;
+        color: clr.$accent;
+        margin-bottom: 8px;
+    }
+
+    &__content {
+        background-color: clr.$solitude;
+        padding-bottom: 20px;
+    }
+}
