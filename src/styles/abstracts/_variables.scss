@@ -5,6 +5,17 @@ $font-weight: (
     light: 300,
 );
 
+$font-size: (
+    'size-1': 14px,
+    'size-2': 16px,
+    'size-3': 18px,
+    'size-4': 20px,
+    'size-5': 24px,
+    'size-6': 26px,
+    'size-7': 32px,
+    'size-8': 36px,
+);
+
 $breakpoints: (
     tablet: 1024px,
     desktop: 1728px,

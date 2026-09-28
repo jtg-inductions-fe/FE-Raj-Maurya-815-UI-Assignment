@@ -1,3 +1,5 @@
+@use '../abstracts/variables' as var;
+
 *,
 *::before,
 *::after {
@@ -6,25 +8,21 @@
     box-sizing: border-box;
 }
 
-html {
-    font-size: 16px;
+html,
+body {
+    height: 100%;
+}
+
+body {
+    font-size: map-get(var.$font-size, regular);
+    line-height: 1.5;
 }
 
 img,
-svg {
+svg,
+video {
+    height: auto;
     max-width: 100%;
-}
-
-button,
-input {
-    font: inherit;
-    color: inherit;
-}
-
-button {
-    border: 0;
-    background: none;
-    cursor: pointer;
 }
 
 a {
@@ -35,4 +33,30 @@ a {
 ul,
 ol {
     list-style: none;
+}
+
+input,
+textarea,
+select,
+button {
+    font-family: inherit;
+    font-size: inherit;
+    line-height: inherit;
+    border: none;
+    outline: none;
+}
+
+button {
+    background: none;
+    cursor: pointer;
+}
+
+p,
+h1,
+h2,
+h3,
+h4,
+h5,
+h6 {
+    overflow-wrap: break-word;
 }
