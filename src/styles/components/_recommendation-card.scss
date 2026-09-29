@@ -18,8 +18,6 @@
         height: 169px;
 
         h3 {
-            font-weight: map-get(var.$font-weight, bold);
-            font-size: 16px;
             color: clr.$accent;
             margin-bottom: 9px;
             width: 179px;
@@ -28,16 +26,12 @@
 
         h4 {
             color: clr.$indigo-primary;
-            font-weight: map-get(var.$font-weight, bold);
-            font-size: 18px;
             margin-bottom: 8px;
             width: 143px;
             height: 54px;
         }
 
         p {
-            font-weight: map-get(var.$font-weight, regular);
-            font-size: 14px;
             width: 148px;
             margin-bottom: 18px;
         }
@@ -66,5 +60,66 @@
     }
 
     @include mxn.respond-to(tablet) {
+        width: 588px;
+        height: 266px;
+        margin-top: 32px;
+        padding: 23px 23px 22px 16px;
+
+        &__left {
+            position: relative;
+            height: 100%;
+            h3 {
+                width: 318px;
+                height: 24px;
+            }
+            h4 {
+                width: 217px;
+                height: 27px;
+            }
+            p {
+                width: 318px;
+            }
+            div {
+                position: absolute;
+                bottom: 8px;
+                margin-left: 0px;
+            }
+        }
+
+        &__right {
+            img {
+                margin-top: 0px;
+                height: 151.41px;
+                width: 146px;
+            }
+            button {
+                width: 146px;
+            }
+        }
+    }
+
+    @include mxn.respond-to(desktop) {
+        height: 278px;
+        margin-top: 16px;
+        margin-left: 0px;
+        margin-right: 0px;
+        padding: 16px 23px 16px 14px;
+        position: relative;
+        left: 24px;
+
+        &__left {
+            h3 {
+                width: 385px;
+                height: 96px;
+                margin-bottom: 2px;
+            }
+        }
+
+        &__right {
+            margin-right: 2px;
+            img {
+                margin-top: 8px;
+            }
+        }
     }
 }

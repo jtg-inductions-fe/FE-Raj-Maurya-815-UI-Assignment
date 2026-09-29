@@ -6,16 +6,39 @@
     margin-top: 20px;
 
     &__heading {
-        font-size: 18px;
-        font-weight: map-get(var.$font-weight, bold);
-        text-transform: uppercase;
         text-align: center;
-        color: clr.$accent;
         margin-bottom: 8px;
     }
 
     &__content {
         background-color: clr.$solitude;
         padding-bottom: 20px;
+    }
+
+    @include mxn.respond-to(tablet) {
+        margin-top: 51px;
+
+        &__heading {
+            margin-bottom: 16px;
+        }
+        &__content {
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+        }
+    }
+
+    @include mxn.respond-to(desktop) {
+        margin-top: 42px;
+        &__heading {
+            text-align: center;
+        }
+        &__content {
+            display: flex;
+            flex-direction: row;
+            height: 506px;
+            justify-content: center;
+            gap: 48px;
+        }
     }
 }

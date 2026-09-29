@@ -68,10 +68,10 @@
 
     &--md {
         font-size: map-get(var.$font-size, 'size-1');
-        font-weight: map-get(var.$font-weight, medium);
+        font-weight: map-get(var.$font-weight, regular);
 
-        @include mxn.respond-to(desktop) {
-            font-size: map-get(var.$font-size, 'size-4');
+        @include mxn.respond-to(tablet) {
+            font-size: map-get(var.$font-size, 'size-2');
         }
     }
 

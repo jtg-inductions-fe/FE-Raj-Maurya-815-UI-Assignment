@@ -54,4 +54,11 @@ new Swiper('.swiper', {
         nextEl: '.swiper-button-next',
         prevEl: '.swiper-button-prev',
     },
+
+    breakpoints: {
+        1024: {
+            slidesPerView: 3,
+            spaceBetween: 40,
+        },
+    },
 });
