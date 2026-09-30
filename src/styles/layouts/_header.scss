@@ -1,19 +1,20 @@
 @use '../abstracts/mixins' as mxn;
 @use '../abstracts/variables' as var;
 @use '../abstracts/colors' as clr;
+@use '../abstracts/functions' as fn;
 
 .header {
-    @include mxn.flex-space-between;
-    height: 80px;
-    padding: 20px 24px 23px 26px;
+    @include mxn.flex-layout(row, space-between);
+    height: fn.to-rem(80px);
+    padding: fn.to-rem(20px) fn.to-rem(24px) fn.to-rem(23px) fn.to-rem(26px);
     position: relative;
 
     &__action {
-        @include mxn.flex-space-between;
-        gap: 8px;
-        width: 168.88px;
-        height: 44px;
-        padding: 6px 6px 0px 8px;
+        @include mxn.flex-layout(row, space-between);
+        gap: fn.to-rem(8px);
+        width: fn.to-rem(168.88px);
+        height: fn.to-rem(44px);
+        padding: fn.to-rem(6px) fn.to-rem(6px) fn.to-rem(0px) fn.to-rem(8px);
 
         span {
             display: none;
@@ -21,9 +22,9 @@
     }
 
     &__left {
-        @include mxn.flex-space-between;
-        width: 112px;
-        height: 48px;
+        @include mxn.flex-layout(row, space-between);
+        width: fn.to-rem(112px);
+        height: fn.to-rem(48px);
     }
 
     &__action-item {
@@ -44,16 +45,16 @@
         position: absolute;
         top: 100%;
         left: 0%;
-        width: 300px;
-        background-color: clr.$white;
+        width: fn.to-rem(300px);
+        background-color: map-get(clr.$colors, white);
         button {
-            width: 250px;
-            height: 56px;
-            margin-left: 24px;
+            width: fn.to-rem(250px);
+            height: fn.to-rem(56px);
+            margin-left: fn.to-rem(24px);
             text-align: left;
             text-transform: capitalize;
             font-weight: map-get(var.$font-weight, bold);
-            color: clr.$accent;
+            color: map-get(clr.$colors, accent);
         }
     }
 
@@ -64,20 +65,20 @@
     &__categories-submenu--open {
         display: block;
         li {
-            width: 300px;
-            height: 56px;
-            margin-left: 24px;
+            width: fn.to-rem(300px);
+            height: fn.to-rem(56px);
+            margin-left: fn.to-rem(24px);
         }
         a {
             width: 100%;
             display: block;
-            line-height: 56px;
+            line-height: fn.to-rem(56px);
             text-transform: uppercase;
             -webkit-background-clip: text;
             background-clip: text;
             background: -webkit-linear-gradient(
-                clr.$indigo-primary,
-                clr.$indigo-secondary
+                map-get(clr.$colors, indigo-primary),
+                map-get(clr.$colors, indigo-secondary)
             );
             -webkit-background-clip: text;
             background-clip: text;
@@ -87,44 +88,44 @@
     }
 
     @include mxn.respond-to(tablet) {
-        padding: 18px 80px;
+        padding: fn.to-rem(18px) fn.to-rem(80px);
 
         &__nav {
-            min-width: 437px;
+            min-width: fn.to-rem(437px);
             display: block;
-            height: 44px;
+            height: fn.to-rem(44px);
         }
 
         &__menu {
             width: 100%;
             height: 100%;
-            @include mxn.flex-space-between;
+            @include mxn.flex-layout(row, space-between);
 
             button {
                 text-transform: uppercase;
                 height: 100%;
-                padding-left: 10px;
-                padding-right: 32px;
+                padding-left: fn.to-rem(10px);
+                padding-right: fn.to-rem(32px);
                 line-height: 100%;
                 position: relative;
 
                 &:hover,
                 &--active {
-                    background: clr.$gradient-indigo;
-                    color: clr.$white;
+                    background: map-get(clr.$colors, gradient-indigo);
+                    color: map-get(clr.$colors, white);
                 }
             }
         }
 
         &__categories-button {
             &--active {
-                background: clr.$gradient-indigo;
-                color: clr.$white;
+                background: map-get(clr.$colors, gradient-indigo);
+                color: map-get(clr.$colors, white);
             }
         }
 
         &__left {
-            width: 264px;
+            width: fn.to-rem(264px);
         }
         &__hamburger {
             display: none;
@@ -135,15 +136,15 @@
         }
 
         &__logo {
-            @include mxn.flex-center;
-            gap: 11px;
+            @include mxn.flex-layout(row, center, center);
+            gap: fn.to-rem(11px);
         }
 
         &__logo-name {
             display: flex;
-            font-size: 30px;
+            font-size: fn.to-rem(30px);
             font-family: 'JosefinSans';
-            padding-top: 10px;
+            padding-top: fn.to-rem(10px);
             &--alura {
                 display: inline;
                 font-weight: map-get(var.$font-weight, bold);
@@ -154,51 +155,51 @@
             }
         }
         &__action {
-            width: 131px;
-            padding-right: 0px;
+            width: fn.to-rem(131px);
+            padding-right: fn.to-rem(0px);
         }
 
         &__categories-submenu--open {
             display: block;
             position: absolute;
-            background-color: clr.$white;
+            background-color: map-get(clr.$colors, white);
 
-            width: 181px;
+            width: fn.to-rem(181px);
             li {
                 width: 100%;
-                margin-left: 0px;
+                margin-left: fn.to-rem(0px);
             }
             a {
-                padding-left: 24px;
-                height: 64px;
-                @include mxn.flex-alignitem-center;
+                padding-left: fn.to-rem(24px);
+                height: fn.to-rem(64px);
+                @include mxn.flex-layout(row, $align: center);
                 width: 100%;
 
                 &:hover {
-                    background: clr.$gradient-indigo;
-                    -webkit-text-fill-color: clr.$white;
+                    background: map-get(clr.$colors, gradient-indigo);
+                    -webkit-text-fill-color: map-get(clr.$colors, white);
                 }
             }
         }
     }
 
     @include mxn.respond-to(desktop) {
-        padding-top: 20px;
+        padding-top: fn.to-rem(20px);
 
         &__menu {
             button {
-                padding-right: 34px;
+                padding-right: fn.to-rem(34px);
             }
         }
         &__left {
-            height: 40px;
+            height: fn.to-rem(40px);
         }
 
         &__logo {
-            margin-right: 58px;
+            margin-right: fn.to-rem(58px);
         }
         &__nav {
-            width: 932px;
+            width: fn.to-rem(932px);
         }
 
         &__menu {
@@ -206,17 +207,17 @@
         }
 
         &__action {
-            width: 372px;
+            width: fn.to-rem(372px);
             &-item a {
-                @include mxn.flex-alignitem-center;
-                gap: 8px;
+                @include mxn.flex-layout(row, $align: center);
+                gap: fn.to-rem(8px);
             }
 
             span {
                 display: inline;
-                padding-bottom: 4px;
+                padding-bottom: fn.to-rem(4px);
                 text-transform: capitalize;
-                font-size: 20px;
+                font-size: fn.to-rem(20px);
                 font-weight: map-get(var.$font-weight, regular);
             }
         }
