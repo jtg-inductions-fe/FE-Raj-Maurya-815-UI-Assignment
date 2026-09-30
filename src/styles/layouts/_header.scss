@@ -4,86 +4,95 @@
 @use '../abstracts/functions' as fn;
 
 .header {
-    @include mxn.flex-layout(row, space-between);
-    height: fn.to-rem(80px);
-    padding: fn.to-rem(20px) fn.to-rem(24px) fn.to-rem(23px) fn.to-rem(26px);
-    position: relative;
-
-    &__action {
+    @include mxn.respond-to(mobile) {
         @include mxn.flex-layout(row, space-between);
-        gap: fn.to-rem(8px);
-        width: fn.to-rem(168.88px);
-        height: fn.to-rem(44px);
-        padding: fn.to-rem(6px) fn.to-rem(6px) fn.to-rem(0px) fn.to-rem(8px);
+        height: fn.to-rem(80px);
+        padding: fn.to-rem(20px) fn.to-rem(24px) fn.to-rem(23px) fn.to-rem(26px);
+        position: relative;
 
-        span {
+        &__action {
+            @include mxn.flex-layout(row, space-between);
+            gap: fn.to-rem(8px);
+            width: fn.to-rem(168.88px);
+            height: fn.to-rem(44px);
+            padding: fn.to-rem(6px) fn.to-rem(6px) fn.to-rem(0px) fn.to-rem(8px);
+        }
+
+        &__action-item-name {
             display: none;
         }
-    }
 
-    &__left {
-        @include mxn.flex-layout(row, space-between);
-        width: fn.to-rem(112px);
-        height: fn.to-rem(48px);
-    }
-
-    &__action-item {
-        min-width: 0;
-    }
-
-    &__logo-name--alura,
-    &__logo-name--books {
-        display: none;
-    }
-
-    &__nav {
-        display: none;
-    }
-
-    &__nav--open {
-        display: block;
-        position: absolute;
-        top: 100%;
-        left: 0%;
-        width: fn.to-rem(300px);
-        background-color: map-get(clr.$colors, white);
-        button {
-            width: fn.to-rem(250px);
-            height: fn.to-rem(56px);
-            margin-left: fn.to-rem(24px);
-            text-align: left;
-            text-transform: capitalize;
-            font-weight: map-get(var.$font-weight, bold);
-            color: map-get(clr.$colors, accent);
+        &__nav-logo {
+            @include mxn.flex-layout(row, space-between);
+            width: fn.to-rem(112px);
+            height: fn.to-rem(48px);
         }
-    }
 
-    &__categories-submenu {
-        display: none;
-    }
-
-    &__categories-submenu--open {
-        display: block;
-        li {
-            width: fn.to-rem(300px);
-            height: fn.to-rem(56px);
-            margin-left: fn.to-rem(24px);
+        &__action-item {
+            min-width: 0;
         }
-        a {
-            width: 100%;
+
+        &__logo-name--alura,
+        &__logo-name--books {
+            display: none;
+        }
+
+        &__nav {
+            display: none;
+        }
+
+        &__nav--open {
             display: block;
-            line-height: fn.to-rem(56px);
-            text-transform: uppercase;
-            -webkit-background-clip: text;
-            background-clip: text;
-            background: -webkit-linear-gradient(
-                map-get(clr.$colors, indigo-primary),
-                map-get(clr.$colors, indigo-secondary)
-            );
-            -webkit-background-clip: text;
-            background-clip: text;
-            -webkit-text-fill-color: transparent;
-            color: transparent;
+            position: absolute;
+            top: 100%;
+            left: 0%;
+            width: fn.to-rem(300px);
+            background-color: map-get(clr.$colors, white);
+
+            .header__menu-btn {
+                width: fn.to-rem(250px);
+                height: fn.to-rem(56px);
+                margin-left: fn.to-rem(24px);
+                text-align: left;
+                text-transform: capitalize;
+                font-weight: map-get(var.$font-weight, bold);
+                color: map-get(clr.$colors, accent);
+            }
+            .header__menu-btn:hover {
+                color: map-get(clr.$colors, indigo-primary);
+            }
+            .header__categories-submenu-link:hover {
+                font-weight: map-get(var.$font-weight, medium);
+            }
+        }
+
+        &__categories-submenu {
+            display: none;
+        }
+
+        &__categories-submenu--open {
+            display: block;
+            .header__categories-submenu-item {
+                width: fn.to-rem(300px);
+                height: fn.to-rem(56px);
+                margin-left: fn.to-rem(24px);
+            }
+            .header__categories-submenu-link {
+                width: 100%;
+                display: block;
+                line-height: fn.to-rem(56px);
+                text-transform: uppercase;
+                -webkit-background-clip: text;
+                background-clip: text;
+                background: -webkit-linear-gradient(
+                    map-get(clr.$colors, indigo-primary),
+                    map-get(clr.$colors, indigo-secondary)
+                );
+                -webkit-background-clip: text;
+                background-clip: text;
+                -webkit-text-fill-color: transparent;
+                color: transparent;
+            }
         }
     }
 
@@ -101,7 +110,7 @@
             height: 100%;
             @include mxn.flex-layout(row, space-between);
 
-            button {
+            &-btn {
                 text-transform: uppercase;
                 height: 100%;
                 padding-left: fn.to-rem(10px);
@@ -117,14 +126,14 @@
             }
         }
 
-        &__categories-button {
+        &__menu-btn-categories {
             &--active {
                 background: map-get(clr.$colors, gradient-indigo);
                 color: map-get(clr.$colors, white);
             }
         }
 
-        &__left {
+        &__nav-logo {
             width: fn.to-rem(264px);
         }
         &__hamburger {
@@ -165,11 +174,11 @@
             background-color: map-get(clr.$colors, white);
 
             width: fn.to-rem(181px);
-            li {
+            .header__categories-submenu-item {
                 width: 100%;
                 margin-left: fn.to-rem(0px);
             }
-            a {
+            .header__categories-submenu-link {
                 padding-left: fn.to-rem(24px);
                 height: fn.to-rem(64px);
                 @include mxn.flex-layout(row, $align: center);
@@ -187,11 +196,11 @@
         padding-top: fn.to-rem(20px);
 
         &__menu {
-            button {
+            .header__menu-btn {
                 padding-right: fn.to-rem(34px);
             }
         }
-        &__left {
+        &__nav-logo {
             height: fn.to-rem(40px);
         }
 
@@ -213,7 +222,7 @@
                 gap: fn.to-rem(8px);
             }
 
-            span {
+            &-item-name {
                 display: inline;
                 padding-bottom: fn.to-rem(4px);
                 text-transform: capitalize;
