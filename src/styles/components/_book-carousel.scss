@@ -80,6 +80,7 @@
     @include mxn.respond-to(desktop) {
         .carousel-wrapper {
             width: 700px;
+            height: 416px;
         }
         .swiper-wrapper {
             height: 320px !important;
