@@ -1,3 +1,5 @@
+@use './functions' as fn;
+
 $font-weight: (
     bold: 700,
     medium: 500,
@@ -6,17 +8,18 @@ $font-weight: (
 );
 
 $font-size: (
-    'size-1': 14px,
-    'size-2': 16px,
-    'size-3': 18px,
-    'size-4': 20px,
-    'size-5': 24px,
-    'size-6': 26px,
-    'size-7': 32px,
-    'size-8': 36px,
+    'sm': fn.to-rem(14px),
+    'md': fn.to-rem(16px),
+    'lg': fn.to-rem(18px),
+    'xl': fn.to-rem(20px),
+    '2xl': fn.to-rem(24px),
+    '3xl': fn.to-rem(26px),
+    '4xl': fn.to-rem(32px),
+    '5xl': fn.to-rem(36px),
 );
 
 $breakpoints: (
-    tablet: 1024px,
-    desktop: 1728px,
+    mobile: fn.to-rem(428px),
+    tablet: fn.to-rem(1024px),
+    desktop: fn.to-rem(1728px),
 );

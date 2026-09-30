@@ -11,8 +11,43 @@
     }
 }
 
-@mixin flex-center {
+@mixin flex-layout($direction: null, $justify: null, $align: null) {
+    @if $direction != null and not ($direction in (row, column)) {
+        @error "Invalid flex-direction value";
+    }
+    @if $justify !=
+        null and not
+        (
+            $justify
+                in (
+                    center,
+                    flex-start,
+                    flex-end,
+                    space-between,
+                    space-around,
+                    space-evenly
+                )
+        )
+    {
+        @error "Invalid justify-content value";
+    }
+    @if $align !=
+        null and not
+        ($align in (center, flex-start, flex-end, stretch))
+    {
+        @error "Invalid align-items value";
+    }
+
     display: flex;
-    justify-content: center;
-    align-items: center;
+    flex-direction: $direction;
+    justify-content: $justify;
+    align-items: $align;
+}
+
+@mixin font-face($font-family, $filename, $font-weight-key) {
+    @font-face {
+        font-family: $font-family;
+        src: url('/assets/fonts/#{$filename}.ttf') format('truetype');
+        font-weight: map-get(var.$font-weight, $font-weight-key);
+    }
 }
