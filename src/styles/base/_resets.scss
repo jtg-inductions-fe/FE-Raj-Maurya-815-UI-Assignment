@@ -1,0 +1,68 @@
+@use '../abstracts/variables' as var;
+@use '../abstracts/colors' as clr;
+
+*,
+*::before,
+*::after {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+html,
+body {
+    height: 100%;
+}
+
+body {
+    font-size: map-get(var.$font-size, regular);
+    line-height: 1.5;
+    font-family: 'Poppins';
+}
+
+img,
+svg,
+video {
+    height: auto;
+    max-width: 100%;
+}
+
+a {
+    color: inherit;
+    text-decoration: none;
+}
+
+ul,
+ol {
+    list-style: none;
+}
+
+input,
+textarea,
+select,
+button {
+    font-family: inherit;
+    font-size: inherit;
+    line-height: inherit;
+    border: none;
+    outline: none;
+}
+
+button {
+    background: none;
+    cursor: pointer;
+}
+
+p,
+h1,
+h2,
+h3,
+h4,
+h5,
+h6 {
+    overflow-wrap: break-word;
+}
+
+.noscript-message {
+    color: map-get(clr.$colors, accent);
+}
