@@ -27,6 +27,15 @@
         font-size: map-get(var.$font-size, 'size-3');
         font-weight: map-get(var.$font-weight, bold);
     }
+
+    &--xsm {
+        font-size: map-get(var.$font-size, 'size-3');
+        font-weight: map-get(var.$font-weight, medium);
+
+        @include mxn.respond-to(tablet) {
+            font-size: map-get(var.$font-size, 'size-5');
+        }
+    }
 }
 
 .subtitle {
