@@ -1,4 +1,5 @@
 @use '../abstracts/variables' as var;
+@use '../abstracts/colors' as clr;
 
 *,
 *::before,
@@ -16,6 +17,7 @@ body {
 body {
     font-size: map-get(var.$font-size, regular);
     line-height: 1.5;
+    font-family: 'Poppins';
 }
 
 img,
@@ -59,4 +61,8 @@ h4,
 h5,
 h6 {
     overflow-wrap: break-word;
+}
+
+.noscript-message {
+    color: map-get(clr.$colors, accent);
 }

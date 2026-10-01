@@ -8,13 +8,18 @@
         <link rel="stylesheet" href="src/styles/main.scss" />
     </head>
     <body>
+        <noscript>
+            <p class="noscript-message">
+                Enable javascript to use this website
+            </p>
+        </noscript>
         <header class="header">
-            <div class="header__left">
-                <button class="header__hamburger">
+            <div class="header__nav-logo">
+                <button class="header__hamburger icon-opacity">
                     <img src="/assets/icons/Menu.svg" alt="menu button" />
                 </button>
 
-                <a href="#" class="header__logo">
+                <a href="#" class="header__logo icon-opacity">
                     <img
                         class="header__logo-icon"
                         src="/assets/icons/Logo.svg"
@@ -29,49 +34,89 @@
             <nav class="header__nav">
                 <ul class="header__menu">
                     <li class="header__item">
-                        <button class="header__categories-button">
+                        <button
+                            class="header__menu-btn header__menu-btn-categories"
+                        >
                             categories
                         </button>
                         <ul class="header__categories-submenu">
-                            <li><a href="#">programming</a></li>
-                            <li><a href="#">front-end</a></li>
-                            <li><a href="#">infrastructure</a></li>
-                            <li><a href="#">business</a></li>
-                            <li><a href="#">design & ux</a></li>
+                            <li class="header__categories-submenu-item">
+                                <a
+                                    class="header__categories-submenu-link"
+                                    href="#"
+                                >
+                                    programming
+                                </a>
+                            </li>
+                            <li class="header__categories-submenu-item">
+                                <a
+                                    class="header__categories-submenu-link"
+                                    href="#"
+                                >
+                                    front-end
+                                </a>
+                            </li>
+                            <li class="header__categories-submenu-item">
+                                <a
+                                    class="header__categories-submenu-link"
+                                    href="#"
+                                >
+                                    infrastructure
+                                </a>
+                            </li>
+                            <li class="header__categories-submenu-item">
+                                <a
+                                    class="header__categories-submenu-link"
+                                    href="#"
+                                >
+                                    business
+                                </a>
+                            </li>
+                            <li class="header__categories-submenu-item">
+                                <a
+                                    class="header__categories-submenu-link"
+                                    href="#"
+                                >
+                                    design & ux
+                                </a>
+                            </li>
                         </ul>
                     </li>
 
                     <li class="header__item">
-                        <button>favorites</button>
+                        <button class="header__menu-btn">favorites</button>
                     </li>
 
                     <li class="header__item">
-                        <button>my bookshelf</button>
+                        <button class="header__menu-btn">my bookshelf</button>
                     </li>
                 </ul>
             </nav>
 
             <ul class="header__action">
                 <li class="header__action-item">
-                    <a href="#"
+                    <a href="#" class="icon-opacity"
                         ><img
                             src="/assets/icons/Favoritos_header.svg"
                             alt="wishlist"
                     /></a>
                 </li>
                 <li class="header__action-item">
-                    <a href="#"
+                    <a href="#" class="icon-opacity"
                         ><img src="/assets/icons/bag.svg" alt="cart" /><span
+                            class="header__action-item-name"
                             >my bag</span
                         ></a
                     >
                 </li>
                 <li class="header__action-item">
-                    <a href="#"
+                    <a href="#" class="icon-opacity"
                         ><img
                             src="/assets/icons/profile.svg"
                             alt="profile"
-                        /><span>my profile</span></a
+                        /><span class="header__action-item-name"
+                            >my profile</span
+                        ></a
                     >
                 </li>
             </ul>
