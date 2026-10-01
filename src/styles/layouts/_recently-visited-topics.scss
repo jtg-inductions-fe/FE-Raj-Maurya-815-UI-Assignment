@@ -1,3 +1,61 @@
 @use '../abstracts/mixins' as mxn;
 @use '../abstracts/variables' as var;
 @use '../abstracts/colors' as clr;
+
+.recently-visited-topics {
+    margin-top: 16px;
+    min-height: 295px;
+    background: clr.$gradient-indigo;
+    display: flex;
+    flex-direction: column;
+    justify-content: flex-start;
+    align-items: center;
+
+    &__heading {
+        margin-top: 24px;
+        margin-bottom: 32px;
+        color: clr.$white;
+    }
+
+    &__content {
+        display: flex;
+        gap: 16px;
+        flex-wrap: wrap;
+        justify-content: center;
+    }
+
+    &__topics-link {
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        color: clr.$white;
+        background-color: clr.$accent;
+        padding: 16px 24px 16px 24px;
+    }
+
+    @include mxn.respond-to(tablet) {
+        min-height: 332px;
+        margin-top: 0px;
+
+        &__heading {
+            margin-top: 32px;
+            margin-bottom: 40px;
+        }
+
+        &__content {
+            width: 900px;
+            gap: 24px;
+        }
+
+        &__topics-link {
+            padding: 24px 32px 24px 32px;
+        }
+    }
+
+    @include mxn.respond-to(desktop) {
+        min-height: 418px;
+        &__heading {
+            margin-top: 64px;
+        }
+    }
+}
