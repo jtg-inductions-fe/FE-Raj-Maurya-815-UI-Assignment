@@ -23,6 +23,7 @@
             margin-bottom: fn.to-rem(16px);
         }
         &__content {
+            min-height: 762px;
             @include mxn.flex-layout(column, $align: center);
         }
     }

@@ -1,0 +1,110 @@
+@use '../abstracts/mixins' as mxn;
+@use '../abstracts/variables' as var;
+@use '../abstracts/colors' as clr;
+@use '../abstracts/functions' as fn;
+
+.best-sellers {
+    margin-top: fn.to-rem(25px);
+
+    &__heading {
+        text-align: center;
+        margin-bottom: fn.to-rem(8px);
+    }
+
+    &__content {
+        background-color: map-get(clr.$colors, solitude);
+        padding-bottom: fn.to-rem(20px);
+    }
+
+    &__card {
+        margin-top: fn.to-rem(25px);
+    }
+
+    &__card-content {
+        margin-top: fn.to-rem(8px);
+
+        &-heading {
+            min-height: fn.to-rem(24px);
+        }
+        &-subheading {
+            width: unset;
+            min-height: fn.to-rem(27px);
+        }
+        &-icon {
+            margin-top: auto;
+        }
+    }
+
+    @include mxn.respond-to(tablet) {
+        margin-top: fn.to-rem(56px);
+
+        &__card {
+            margin-top: fn.to-rem(32px);
+        }
+
+        &__card-content {
+            margin-top: fn.to-rem(0px);
+            &-description {
+                font-size: fn.to-rem(14px);
+            }
+            &-heading {
+                margin-bottom: fn.to-rem(7px);
+            }
+            &-subheading {
+                margin-top: fn.to-rem(0px);
+            }
+        }
+
+        &__card-media {
+            gap: 7px;
+            &-image {
+                width: fn.to-rem(161px);
+                height: fn.to-rem(166px);
+            }
+            &-button {
+                width: fn.to-rem(161px);
+                height: fn.to-rem(48px);
+            }
+        }
+
+        &__heading {
+            margin-bottom: fn.to-rem(16px);
+        }
+        &__content {
+            min-height: 762px;
+            @include mxn.flex-layout(column, $align: center);
+        }
+    }
+
+    @include mxn.respond-to(desktop) {
+        margin-top: fn.to-rem(63px);
+
+        &__card {
+            left: fn.to-rem(38px);
+            margin-top: fn.to-rem(82px);
+            padding-left: fn.to-rem(18px);
+        }
+
+        &__card-content {
+            margin-top: fn.to-rem(5px);
+            &-heading {
+                min-height: fn.to-rem(48px);
+            }
+            &-subheading {
+                margin-bottom: fn.to-rem(14px);
+            }
+            &-icon {
+                margin-top: auto;
+            }
+        }
+
+        &__heading {
+            text-align: center;
+        }
+        &__content {
+            @include mxn.flex-layout(row, center, flex-start);
+            min-height: fn.to-rem(506px);
+            gap: fn.to-rem(48px);
+        }
+    }
+}
