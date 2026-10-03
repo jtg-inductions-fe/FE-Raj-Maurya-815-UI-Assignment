@@ -4,28 +4,34 @@
 
 .heading {
     &--xl {
-        font-size: map-get(var.$font-size, 'size-3');
-        font-weight: map-get(var.$font-weight, bold);
+        @include mxn.respond-to(mobile) {
+            font-size: map-get(var.$font-size, 'lg');
+            font-weight: map-get(var.$font-weight, bold);
+        }
 
         @include mxn.respond-to(tablet) {
-            font-size: map-get(var.$font-size, 'size-8');
+            font-size: map-get(var.$font-size, '5xl');
             font-weight: map-get(var.$font-weight, bold);
         }
     }
 
     &--lg {
-        font-size: map-get(var.$font-size, 'size-2');
-        font-weight: map-get(var.$font-weight, bold);
+        @include mxn.respond-to(mobile) {
+            font-size: map-get(var.$font-size, 'md');
+            font-weight: map-get(var.$font-weight, bold);
+        }
 
         @include mxn.respond-to(desktop) {
-            font-size: map-get(var.$font-size, 'size-7');
+            font-size: map-get(var.$font-size, '4xl');
             font-weight: map-get(var.$font-weight, bold);
         }
     }
 
     &--sm {
-        font-size: map-get(var.$font-size, 'size-3');
-        font-weight: map-get(var.$font-weight, bold);
+        @include mxn.respond-to(mobile) {
+            font-size: map-get(var.$font-size, 'lg');
+            font-weight: map-get(var.$font-weight, bold);
+        }
     }
 }
 
@@ -33,54 +39,59 @@
     text-transform: uppercase;
 
     &--lg {
-        font-size: map-get(var.$font-size, 'size-3');
-        font-weight: map-get(var.$font-weight, bold);
-        color: clr.$accent;
+        @include mxn.respond-to(mobile) {
+            font-size: map-get(var.$font-size, 'lg');
+            font-weight: map-get(var.$font-weight, bold);
+            color: map-get(clr.$colors, accent);
+        }
 
         @include mxn.respond-to(tablet) {
-            font-size: map-get(var.$font-size, 'size-6');
+            font-size: map-get(var.$font-size, '3xl');
         }
 
         @include mxn.respond-to(desktop) {
-            font-size: map-get(var.$font-size, 'size-7');
+            font-size: map-get(var.$font-size, '4xl');
         }
     }
 
     &--md {
-        font-size: map-get(var.$font-size, 'size-2');
-        font-weight: map-get(var.$font-weight, light);
+        @include mxn.respond-to(mobile) {
+            font-size: map-get(var.$font-size, 'md');
+            font-weight: map-get(var.$font-weight, light);
+        }
 
         @include mxn.respond-to(tablet) {
-            font-size: map-get(var.$font-size, 'size-5');
+            font-size: map-get(var.$font-size, '2xl');
         }
 
         @include mxn.respond-to(desktop) {
-            font-size: map-get(var.$font-size, 'size-7');
+            font-size: map-get(var.$font-size, '4xl');
         }
     }
 }
 
 .text {
     &--lg {
-        font-size: map-get(var.$font-size, 'size-2');
-        font-weight: map-get(var.$font-weight, medium);
+        @include mxn.respond-to(mobile) {
+            font-size: map-get(var.$font-size, 'md');
+            font-weight: map-get(var.$font-weight, medium);
+        }
     }
 
     &--md {
-        font-size: map-get(var.$font-size, 'size-1');
-        font-weight: map-get(var.$font-weight, regular);
-
+        @include mxn.respond-to(mobile) {
+            font-size: map-get(var.$font-size, 'sm');
+            font-weight: map-get(var.$font-weight, regular);
+        }
         @include mxn.respond-to(tablet) {
-            font-size: map-get(var.$font-size, 'size-2');
+            font-size: map-get(var.$font-size, 'md');
         }
     }
 
     &--sm {
-        font-size: map-get(var.$font-size, 'size-2');
-        font-weight: map-get(var.$font-weight, light);
+        @include mxn.respond-to(mobile) {
+            font-size: map-get(var.$font-size, 'md');
+            font-weight: map-get(var.$font-weight, light);
+        }
     }
-}
-
-body {
-    font-family: 'Poppins';
 }

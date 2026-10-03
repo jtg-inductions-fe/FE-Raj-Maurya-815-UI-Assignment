@@ -8,13 +8,18 @@
         <link rel="stylesheet" href="src/styles/main.scss" />
     </head>
     <body>
+        <noscript>
+            <p class="noscript-message">
+                Enable javascript to use this website
+            </p>
+        </noscript>
         <header class="header">
-            <div class="header__left">
-                <button class="header__hamburger">
+            <div class="header__nav-logo">
+                <button class="header__hamburger icon-opacity">
                     <img src="/assets/icons/Menu.svg" alt="menu button" />
                 </button>
 
-                <a href="#" class="header__logo">
+                <a href="#" class="header__logo icon-opacity">
                     <img
                         class="header__logo-icon"
                         src="/assets/icons/Logo.svg"
@@ -29,49 +34,89 @@
             <nav class="header__nav">
                 <ul class="header__menu">
                     <li class="header__item">
-                        <button class="header__categories-button">
+                        <button
+                            class="header__menu-btn header__menu-btn-categories"
+                        >
                             categories
                         </button>
                         <ul class="header__categories-submenu">
-                            <li><a href="#">programming</a></li>
-                            <li><a href="#">front-end</a></li>
-                            <li><a href="#">infrastructure</a></li>
-                            <li><a href="#">business</a></li>
-                            <li><a href="#">design & ux</a></li>
+                            <li class="header__categories-submenu-item">
+                                <a
+                                    class="header__categories-submenu-link"
+                                    href="#"
+                                >
+                                    programming
+                                </a>
+                            </li>
+                            <li class="header__categories-submenu-item">
+                                <a
+                                    class="header__categories-submenu-link"
+                                    href="#"
+                                >
+                                    front-end
+                                </a>
+                            </li>
+                            <li class="header__categories-submenu-item">
+                                <a
+                                    class="header__categories-submenu-link"
+                                    href="#"
+                                >
+                                    infrastructure
+                                </a>
+                            </li>
+                            <li class="header__categories-submenu-item">
+                                <a
+                                    class="header__categories-submenu-link"
+                                    href="#"
+                                >
+                                    business
+                                </a>
+                            </li>
+                            <li class="header__categories-submenu-item">
+                                <a
+                                    class="header__categories-submenu-link"
+                                    href="#"
+                                >
+                                    design & ux
+                                </a>
+                            </li>
                         </ul>
                     </li>
 
                     <li class="header__item">
-                        <button>favorites</button>
+                        <button class="header__menu-btn">favorites</button>
                     </li>
 
                     <li class="header__item">
-                        <button>my bookshelf</button>
+                        <button class="header__menu-btn">my bookshelf</button>
                     </li>
                 </ul>
             </nav>
 
             <ul class="header__action">
                 <li class="header__action-item">
-                    <a href="#"
+                    <a href="#" class="icon-opacity"
                         ><img
                             src="/assets/icons/Favoritos_header.svg"
                             alt="wishlist"
                     /></a>
                 </li>
                 <li class="header__action-item">
-                    <a href="#"
+                    <a href="#" class="icon-opacity"
                         ><img src="/assets/icons/bag.svg" alt="cart" /><span
+                            class="header__action-item-name"
                             >my bag</span
                         ></a
                     >
                 </li>
                 <li class="header__action-item">
-                    <a href="#"
+                    <a href="#" class="icon-opacity"
                         ><img
                             src="/assets/icons/profile.svg"
                             alt="profile"
-                        /><span>my profile</span></a
+                        /><span class="header__action-item-name"
+                            >my profile</span
+                        ></a
                     >
                 </li>
             </ul>
@@ -106,6 +151,7 @@
                                 class="latest-releases__carousel-slide swiper-slide"
                             >
                                 <img
+                                    class="swiper-slide-img"
                                     src="/assets/images/ApacheKafka.png"
                                     alt="book 1 latest releases"
                                 />
@@ -114,6 +160,7 @@
                                 class="latest-releases__carousel-slide swiper-slide"
                             >
                                 <img
+                                    class="swiper-slide-img"
                                     src="/assets/images/Liderança.png"
                                     alt="book 2 latest release"
                                 />
@@ -122,6 +169,7 @@
                                 class="latest-releases__carousel-slide swiper-slide"
                             >
                                 <img
+                                    class="swiper-slide-img"
                                     src="/assets/images/Javascript.png"
                                     alt="book 3 latest releases"
                                 />
@@ -130,6 +178,7 @@
                                 class="latest-releases__carousel-slide swiper-slide"
                             >
                                 <img
+                                    class="swiper-slide-img"
                                     src="/assets/images/Tuning.png"
                                     alt="book 4 latest releases"
                                 />
@@ -138,12 +187,14 @@
                     </div>
                     <div class="swiper-button-prev">
                         <img
+                            class="swiper-button-img"
                             src="/assets/icons/FAB_left.svg"
                             alt="previous slide"
                         />
                     </div>
                     <div class="swiper-button-next">
                         <img
+                            class="swiper-button-img"
                             src="/assets/icons/FAB_right.svg"
                             alt="next slide"
                         />
@@ -151,31 +202,46 @@
                 </div>
                 <aside class="latest-releases__card recommendation-card">
                     <div
-                        class="latest-releases__card-left recommendation-card__left"
+                        class="latest-releases__card-left recommendation-card__content"
                     >
-                        <h3 class="heading--lg">
+                        <h3
+                            class="heading--lg recommendation-card__content-heading"
+                        >
                             You might also be interested in...
                         </h3>
-                        <h4 class="heading--sm">Angular 11 and Firebase</h4>
-                        <p class="text--md">
+                        <h4
+                            class="heading--sm recommendation-card__content-subheading"
+                        >
+                            Angular 11 and Firebase
+                        </h4>
+                        <p
+                            class="text--md recommendation-card__content-description"
+                        >
                             Building an application integrated with the Google
                             platform.
                         </p>
                         <div
-                            class="latest-releases__card-left-icon recommendation-card__left-icon"
+                            class="latest-releases__card-left-icon recommendation-card__content-icon"
                         >
-                            <img src="/assets/icons/favoritos_card.svg" />
-                            <img src="/assets/icons/bag_card.svg" />
+                            <a href="#" class="icon-opacity"
+                                ><img src="/assets/icons/favoritos_card.svg"
+                            /></a>
+                            <a href="#" class="icon-opacity"
+                                ><img src="/assets/icons/bag_card.svg"
+                            /></a>
                         </div>
                     </div>
                     <div
-                        class="latest-releases__card-right recommendation-card__right"
+                        class="latest-releases__card-right recommendation-card__media"
                     >
                         <img
                             src="/assets/images/Angular.png"
                             alt="angular image"
+                            class="recommendation-card__media-image"
                         />
-                        <button>Learn more</button>
+                        <button class="recommendation-card__media-button">
+                            Learn more
+                        </button>
                     </div>
                 </aside>
             </div>
@@ -198,6 +264,7 @@
                                 class="best-sellers__carousel-slide swiper-slide"
                             >
                                 <img
+                                    class="swiper-slide-img"
                                     src="/assets/images/ApacheKafka.png"
                                     alt="book 1 best sellers"
                                 />
@@ -206,6 +273,7 @@
                                 class="best-sellers__carousel-slide swiper-slide"
                             >
                                 <img
+                                    class="swiper-slide-img"
                                     src="/assets/images/Liderança.png"
                                     alt="book 2 best sellers"
                                 />
@@ -214,6 +282,7 @@
                                 class="best-sellers__carousel-slide swiper-slide"
                             >
                                 <img
+                                    class="swiper-slide-img"
                                     src="/assets/images/Javascript.png"
                                     alt="book 3 best sellers"
                                 />
@@ -222,6 +291,7 @@
                                 class="best-sellers__carousel-slide swiper-slide"
                             >
                                 <img
+                                    class="swiper-slide-img"
                                     src="/assets/images/Tuning.png"
                                     alt="book 4 best sellers"
                                 />
@@ -230,12 +300,14 @@
                     </div>
                     <div class="swiper-button-prev">
                         <img
+                            class="swiper-button-img"
                             src="/assets/icons/FAB_left.svg"
                             alt="previous slide"
                         />
                     </div>
                     <div class="swiper-button-next">
                         <img
+                            class="swiper-button-img"
                             src="/assets/icons/FAB_right.svg"
                             alt="next slide"
                         />
@@ -243,36 +315,55 @@
                 </div>
                 <aside class="best-sellers__card recommendation-card">
                     <div
-                        class="best-sellers__card-left recommendation-card__left"
+                        class="best-sellers__card-content recommendation-card__content"
                     >
-                        <div class="best-sellers__card-left-star">
+                        <div class="best-sellers__card-content-star">
                             <img src="/assets/icons/Star.svg" alt="star" />
                             <img src="/assets/icons/Star.svg" alt="star" />
                             <img src="/assets/icons/Star.svg" alt="star" />
                             <img src="/assets/icons/Star.svg" alt="star" />
                             <img src="/assets/icons/Star.svg" alt="star" />
                         </div>
-                        <h3 class="heading--lg">Author of the Month</h3>
-                        <h4 class="heading--sm">Juliana Agarikov</h4>
-                        <p class="text--md">
+                        <h3
+                            class="heading--lg best-sellers__card-content-heading recommendation-card__content-heading"
+                        >
+                            Author of the Month
+                        </h3>
+                        <h4
+                            class="heading--sm best-sellers__card-content-subheading recommendation-card__content-subheading"
+                        >
+                            Juliana Agarikov
+                        </h4>
+                        <p
+                            class="text--md best-sellers__card-content-description recommendation-card__content-description"
+                        >
                             A systems analyst and writer, Juliana specializes in
                             front-end development.
                         </p>
                         <div
-                            class="best-sellers__card-left-icon recommendation-card__left-icon"
+                            class="best-sellers__card-content-icon recommendation-card__content-icon"
                         >
-                            <img src="/assets/icons/favoritos_card.svg" />
-                            <img src="/assets/icons/bag_card.svg" />
+                            <a href="#" class="icon-opacity"
+                                ><img src="/assets/icons/favoritos_card.svg" />
+                            </a>
+                            <a href="#" class="icon-opacity"
+                                ><img src="/assets/icons/bag_card.svg" />
+                            </a>
                         </div>
                     </div>
                     <div
-                        class="best-sellers__card-right recommendation-card__right"
+                        class="best-sellers__card-media recommendation-card__media"
                     >
                         <img
                             src="/assets/images/best-sellers card image.png"
                             alt="author of the month image"
+                            class="best-sellers__card-media-image recommendation-card__media-image"
                         />
-                        <button>Learn more</button>
+                        <button
+                            class="best-sellers__card-media-button recommendation-card__media-button"
+                        >
+                            Learn more
+                        </button>
                     </div>
                 </aside>
             </div>
