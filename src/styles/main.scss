@@ -2,5 +2,8 @@
 @use 'base/typography';
 @use 'layouts/header';
 @use 'layouts/hero';
+@use 'components/book-carousel';
+@use 'components/recommendation-card';
+@use 'layouts/latest-releases';
 @use 'base/fonts';
 @use 'components/icons';
