@@ -1,124 +1,121 @@
 @use '../abstracts/mixins' as mxn;
 @use '../abstracts/variables' as var;
 @use '../abstracts/colors' as clr;
+@use '../abstracts/functions' as fn;
 
 .recommendation-card {
-    height: 295px;
-    width: 380px;
-    background-color: clr.$white;
-    margin: 20px auto 0px auto;
-    padding: 16px 16px 25px 16px;
-    display: flex;
-    justify-content: space-between;
-    border-radius: 10px;
-    box-shadow: 0px 4px 4px 0px #00000040;
+    min-height: fn.to-rem(295px);
+    width: fn.to-rem(380px);
+    background-color: map-get(clr.$colors, white);
+    margin: fn.to-rem(20px) auto fn.to-rem(0px) auto;
+    padding: fn.to-rem(16px) fn.to-rem(16px) fn.to-rem(25px) fn.to-rem(16px);
+    @include mxn.flex-layout(row, space-between);
+    border-radius: fn.to-rem(10px);
+    box-shadow: fn.to-rem(0px) fn.to-rem(4px) fn.to-rem(4px) fn.to-rem(0px)
+        #00000040;
 
-    &__left {
-        width: 254px;
-        height: 169px;
+    &__content {
+        width: fn.to-rem(254px);
+        @include mxn.flex-layout(column);
 
-        h3 {
-            color: clr.$accent;
-            margin-bottom: 9px;
-            width: 179px;
-            height: 48px;
+        &-heading {
+            color: map-get(clr.$colors, accent);
+            margin-bottom: fn.to-rem(9px);
+            width: fn.to-rem(179px);
+            min-height: fn.to-rem(48px);
         }
 
-        h4 {
-            color: clr.$indigo-primary;
-            margin-bottom: 8px;
-            width: 143px;
-            height: 54px;
+        &-subheading {
+            color: map-get(clr.$colors, indigo-primary);
+            margin-bottom: fn.to-rem(8px);
+            width: fn.to-rem(143px);
+            min-height: fn.to-rem(54px);
         }
 
-        p {
-            width: 148px;
-            margin-bottom: 18px;
+        &-description {
+            width: fn.to-rem(148px);
+            margin-bottom: fn.to-rem(18px);
         }
 
-        div {
-            display: flex;
-            justify-content: flex-start;
-            gap: 28px;
-            margin-left: 11px;
+        &-icon {
+            @include mxn.flex-layout(row, flex-start);
+            gap: fn.to-rem(28px);
+            margin-left: fn.to-rem(11px);
         }
     }
 
-    &__right {
-        display: flex;
-        flex-direction: column;
-        justify-content: space-between;
-        img {
-            margin-top: 5px;
+    &__media {
+        @include mxn.flex-layout(column, space-between);
+        gap: fn.to-rem(35px);
+
+        &-image {
+            margin-top: fn.to-rem(5px);
         }
-        button {
-            color: clr.$white;
-            width: 161px;
-            height: 48px;
-            background-color: clr.$accent;
+        &-button {
+            color: map-get(clr.$colors, white);
+            width: fn.to-rem(161px);
+            min-height: fn.to-rem(48px);
+            background-color: map-get(clr.$colors, accent);
         }
     }
 
     @include mxn.respond-to(tablet) {
-        width: 588px;
-        height: 266px;
-        margin-top: 32px;
-        padding: 23px 23px 22px 16px;
+        width: fn.to-rem(588px);
+        min-height: fn.to-rem(266px);
+        margin-top: fn.to-rem(32px);
+        padding: fn.to-rem(23px) fn.to-rem(23px) fn.to-rem(22px) fn.to-rem(16px);
 
-        &__left {
-            position: relative;
-            height: 100%;
-            h3 {
-                width: 318px;
-                height: 24px;
+        &__content {
+            &-heading {
+                width: fn.to-rem(318px);
+                min-height: fn.to-rem(24px);
             }
-            h4 {
-                width: 217px;
-                height: 27px;
+            &-subheading {
+                width: fn.to-rem(217px);
+                min-height: fn.to-rem(27px);
             }
-            p {
-                width: 318px;
+            &-description {
+                width: fn.to-rem(318px);
             }
-            div {
-                position: absolute;
-                bottom: 8px;
-                margin-left: 0px;
+            &-icon {
+                margin-top: auto;
+                margin-left: fn.to-rem(0px);
             }
         }
 
-        &__right {
-            img {
-                margin-top: 0px;
-                height: 151.41px;
-                width: 146px;
+        &__media {
+            gap: fn.to-rem(21.59px);
+            &-image {
+                margin-top: fn.to-rem(0px);
+                min-height: fn.to-rem(151.41px);
+                width: fn.to-rem(146px);
             }
-            button {
-                width: 146px;
+            &-button {
+                width: fn.to-rem(146px);
             }
         }
     }
 
     @include mxn.respond-to(desktop) {
-        height: 278px;
-        margin-top: 16px;
-        margin-left: 0px;
-        margin-right: 0px;
-        padding: 16px 23px 16px 14px;
+        min-height: fn.to-rem(278px);
+        margin-top: fn.to-rem(16px);
+        margin-left: fn.to-rem(0px);
+        margin-right: fn.to-rem(0px);
+        padding: fn.to-rem(16px) fn.to-rem(23px) fn.to-rem(16px) fn.to-rem(14px);
         position: relative;
-        left: 24px;
+        left: fn.to-rem(24px);
 
-        &__left {
-            h3 {
-                width: 385px;
-                height: 96px;
-                margin-bottom: 2px;
+        &__content {
+            &-heading {
+                width: fn.to-rem(385px);
+                margin-bottom: fn.to-rem(2px);
             }
         }
 
-        &__right {
-            margin-right: 2px;
-            img {
-                margin-top: 8px;
+        &__media {
+            margin-right: fn.to-rem(2px);
+            &-image {
+                margin-top: fn.to-rem(8px);
             }
         }
     }
