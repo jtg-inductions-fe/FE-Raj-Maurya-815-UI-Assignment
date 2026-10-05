@@ -38,11 +38,10 @@
 
     &__item {
         min-width: 0;
-    }
-
-    &__item:first-child {
-        @include mxn.respond-to(tablet) {
-            display: none;
+        &:first-child {
+            @include mxn.respond-to(tablet) {
+                display: none;
+            }
         }
     }
 }

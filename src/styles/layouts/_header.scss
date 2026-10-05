@@ -44,16 +44,15 @@
         @include mxn.respond-to(desktop) {
             width: fn.to-rem(932px);
         }
-    }
-
-    &__nav--open {
-        @include mxn.respond-to(mobile) {
-            display: block;
-            position: absolute;
-            top: 100%;
-            left: 0%;
-            width: fn.to-rem(300px);
-            background-color: map-get(clr.$colors, white);
+        &--open {
+            @include mxn.respond-to(mobile) {
+                display: block;
+                position: absolute;
+                top: 100%;
+                left: 0%;
+                width: fn.to-rem(300px);
+                background-color: map-get(clr.$colors, white);
+            }
         }
     }
 
@@ -65,53 +64,6 @@
         }
         @include mxn.respond-to(desktop) {
             justify-content: flex-start;
-        }
-    }
-
-    .menu__btn {
-        width: fn.to-rem(250px);
-        height: fn.to-rem(56px);
-        margin-left: fn.to-rem(24px);
-        text-align: left;
-        text-transform: uppercase;
-        font-weight: map-get(var.$font-weight, regular);
-        padding-left: 10px;
-
-        &:hover,
-        &--active {
-            background: map-get(clr.$colors, gradient-indigo);
-            color: map-get(clr.$colors, white);
-        }
-        @include mxn.respond-to(tablet) {
-            text-transform: uppercase;
-            height: 100%;
-            padding-left: fn.to-rem(10px);
-            padding-right: fn.to-rem(32px);
-            line-height: 100%;
-            position: relative;
-            width: auto;
-            margin-left: 0;
-            text-align: initial;
-            font-weight: normal;
-            color: initial;
-
-            &:hover,
-            &--active {
-                background: map-get(clr.$colors, gradient-indigo);
-                color: map-get(clr.$colors, white);
-            }
-        }
-        @include mxn.respond-to(desktop) {
-            padding-right: fn.to-rem(34px);
-        }
-    }
-
-    .menu-btn:first-child {
-        @include mxn.respond-to(tablet) {
-            &--active {
-                background: map-get(clr.$colors, gradient-indigo);
-                color: map-get(clr.$colors, white);
-            }
         }
     }
 
@@ -128,30 +80,6 @@
         }
         @include mxn.respond-to(desktop) {
             margin-right: fn.to-rem(58px);
-        }
-    }
-
-    .name {
-        color: blue($color: #000000);
-        &__primary,
-        &__secondary {
-            @include mxn.respond-to(mobile) {
-                display: none;
-            }
-        }
-        @include mxn.respond-to(tablet) {
-            display: flex;
-            font-size: fn.to-rem(30px);
-            font-family: 'JosefinSans';
-            padding-top: fn.to-rem(10px);
-            &__primary {
-                display: inline;
-                font-weight: map-get(var.$font-weight, bold);
-            }
-            &__secondary {
-                display: inline;
-                font-weight: map-get(var.$font-weight, regular);
-            }
         }
     }
 }
