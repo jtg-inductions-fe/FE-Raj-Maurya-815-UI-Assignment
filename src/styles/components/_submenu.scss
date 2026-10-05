@@ -1,0 +1,58 @@
+@use '../abstracts/mixins' as mxn;
+@use '../abstracts/variables' as var;
+@use '../abstracts/colors' as clr;
+@use '../abstracts/functions' as fn;
+
+.submenu {
+    display: none;
+    &__link {
+        display: block;
+        line-height: fn.to-rem(56px);
+        text-transform: uppercase;
+        -webkit-background-clip: text;
+        background-clip: text;
+        background: -webkit-linear-gradient(
+            map-get(clr.$colors, indigo-primary),
+            map-get(clr.$colors, indigo-secondary)
+        );
+        -webkit-background-clip: text;
+        -webkit-text-fill-color: transparent;
+        color: transparent;
+        @include mxn.respond-to(mobile) {
+            padding-left: fn.to-rem(20px);
+            &:hover {
+                font-weight: map-get(var.$font-weight, medium);
+            }
+        }
+        @include mxn.respond-to(tablet) {
+            padding-left: fn.to-rem(24px);
+            height: fn.to-rem(64px);
+            @include mxn.flex-layout(row, $align: center);
+            width: 100%;
+            &:hover {
+                background: map-get(clr.$colors, gradient-indigo);
+                -webkit-text-fill-color: map-get(clr.$colors, white);
+            }
+        }
+    }
+    &__item {
+        @include mxn.respond-to(mobile) {
+            width: fn.to-rem(300px);
+            height: fn.to-rem(56px);
+            margin-left: fn.to-rem(24px);
+        }
+        @include mxn.respond-to(tablet) {
+            width: 100%;
+            height: fn.to-rem(64px);
+            margin-left: fn.to-rem(0px);
+        }
+    }
+    &--open {
+        display: block;
+        @include mxn.respond-to(tablet) {
+            position: absolute;
+            background-color: map-get(clr.$colors, white);
+            width: fn.to-rem(181px);
+        }
+    }
+}
