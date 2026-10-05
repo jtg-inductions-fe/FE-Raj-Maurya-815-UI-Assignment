@@ -1,7 +1,10 @@
-document.addEventListener('click', (e) => {
-    const hamburger = document.querySelector('.header__hamburger');
-    const nav = document.querySelector('.header__nav');
+const hamburger = document.querySelector('.header__hamburger');
+const nav = document.querySelector('.header__nav');
+const category = document.querySelector('.header__menu-btn-categories');
+const categoryWrapper = document.querySelector('.header__item');
+const categorySubmenu = document.querySelector('.header__categories-submenu');
 
+document.addEventListener('click', (e) => {
     if (hamburger.contains(e.target)) {
         nav.classList.toggle('header__nav--open');
     } else if (!nav.contains(e.target)) {
@@ -9,13 +12,10 @@ document.addEventListener('click', (e) => {
     }
 });
 
-const category = document.querySelector('.header__menu-btn-categories');
-const categoryWrapper = document.querySelector('.header__item');
-const categorySubmenu = document.querySelector('.header__categories-submenu');
 categoryWrapper.addEventListener('mouseenter', () => {
     if (window.innerWidth >= 1024) {
-        categorySubmenu.classList.toggle('header__categories-submenu--open');
-        category.classList.toggle('header__menu-btn-categories--active');
+        categorySubmenu.classList.add('header__categories-submenu--open');
+        category.classList.add('header__menu-btn-categories--active');
     }
 });
 
@@ -44,15 +44,7 @@ document.addEventListener('click', (e) => {
 
 window.addEventListener('resize', () => {
     if (window.innerWidth >= 1024) {
-        const nav = document.querySelector('.header__nav--open');
-        const categorySubmenu = document.querySelector(
-            '.header__categories-submenu--open',
-        );
-        if (nav) nav.classList.remove('header__nav--open');
-        if (categorySubmenu) {
-            categorySubmenu.classList.remove(
-                'header__categories-submenu--open',
-            );
-        }
+        nav.classList.remove('header__nav--open');
+        categorySubmenu.classList.remove('header__categories-submenu--open');
     }
 });

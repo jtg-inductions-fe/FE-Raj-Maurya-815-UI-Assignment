@@ -4,108 +4,180 @@
 @use '../abstracts/functions' as fn;
 
 .header {
-    @include mxn.respond-to(mobile) {
-        @include mxn.flex-layout(row, space-between);
-        height: fn.to-rem(80px);
-        padding: fn.to-rem(20px) fn.to-rem(24px) fn.to-rem(23px) fn.to-rem(26px);
-        position: relative;
+    @include mxn.flex-layout(row, space-between);
+    height: fn.to-rem(80px);
+    position: relative;
 
-        &__action {
-            @include mxn.flex-layout(row, space-between);
-            gap: fn.to-rem(8px);
+    @include mxn.respond-to(mobile) {
+        padding: fn.to-rem(20px) fn.to-rem(24px) fn.to-rem(23px) fn.to-rem(26px);
+    }
+    @include mxn.respond-to(tablet) {
+        padding: fn.to-rem(18px) fn.to-rem(80px);
+    }
+    @include mxn.respond-to(desktop) {
+        padding-top: fn.to-rem(20px);
+    }
+
+    &__action {
+        @include mxn.flex-layout(row, space-between);
+        gap: fn.to-rem(8px);
+        height: fn.to-rem(44px);
+        @include mxn.respond-to(mobile) {
             width: fn.to-rem(168.88px);
-            height: fn.to-rem(44px);
             padding: fn.to-rem(6px) fn.to-rem(6px) fn.to-rem(0px) fn.to-rem(8px);
         }
+        @include mxn.respond-to(tablet) {
+            width: fn.to-rem(131px);
+            padding-right: fn.to-rem(0px);
+        }
+        @include mxn.respond-to(desktop) {
+            width: fn.to-rem(372px);
+            &-item a {
+                @include mxn.flex-layout(row, $align: center);
+                gap: fn.to-rem(8px);
+            }
+        }
+    }
 
-        &__action-item-name {
+    &__action-item-name {
+        @include mxn.respond-to(mobile) {
             display: none;
         }
+        @include mxn.respond-to(desktop) {
+            display: inline;
+            padding-bottom: fn.to-rem(4px);
+            text-transform: capitalize;
+            font-size: fn.to-rem(20px);
+            font-weight: map-get(var.$font-weight, regular);
+        }
+    }
 
-        &__nav-logo {
-            @include mxn.flex-layout(row, space-between);
+    &__nav-logo {
+        @include mxn.flex-layout(row, space-between);
+        @include mxn.respond-to(mobile) {
             width: fn.to-rem(112px);
             height: fn.to-rem(48px);
         }
-
-        &__action-item {
-            min-width: 0;
+        @include mxn.respond-to(tablet) {
+            width: fn.to-rem(264px);
         }
+        @include mxn.respond-to(desktop) {
+            height: fn.to-rem(40px);
+        }
+    }
 
-        &__logo-name--alura,
-        &__logo-name--books {
+    &__action-item {
+        min-width: 0;
+    }
+
+    &__logo-name--alura,
+    &__logo-name--books {
+        @include mxn.respond-to(mobile) {
             display: none;
         }
+    }
 
-        &__nav {
+    &__nav {
+        @include mxn.respond-to(mobile) {
             display: none;
         }
+        @include mxn.respond-to(tablet) {
+            min-width: fn.to-rem(437px);
+            display: block;
+            height: fn.to-rem(44px);
+        }
+        @include mxn.respond-to(desktop) {
+            width: fn.to-rem(932px);
+        }
+    }
 
-        &__nav--open {
+    &__menu-btn {
+        width: fn.to-rem(250px);
+        height: fn.to-rem(56px);
+        margin-left: fn.to-rem(24px);
+        text-align: left;
+        text-transform: capitalize;
+        font-weight: map-get(var.$font-weight, bold);
+        color: map-get(clr.$colors, accent);
+        &:hover {
+            color: map-get(clr.$colors, indigo-primary);
+        }
+        @include mxn.respond-to(desktop) {
+            padding-right: fn.to-rem(34px);
+        }
+    }
+
+    &__nav--open {
+        @include mxn.respond-to(mobile) {
             display: block;
             position: absolute;
             top: 100%;
             left: 0%;
             width: fn.to-rem(300px);
             background-color: map-get(clr.$colors, white);
-
-            .header__menu-btn {
-                width: fn.to-rem(250px);
-                height: fn.to-rem(56px);
-                margin-left: fn.to-rem(24px);
-                text-align: left;
-                text-transform: capitalize;
-                font-weight: map-get(var.$font-weight, bold);
-                color: map-get(clr.$colors, accent);
-            }
-            .header__menu-btn:hover {
-                color: map-get(clr.$colors, indigo-primary);
-            }
-            .header__categories-submenu-link:hover {
-                font-weight: map-get(var.$font-weight, medium);
-            }
         }
+    }
 
-        &__categories-submenu {
-            display: none;
-        }
+    &__categories-submenu {
+        display: none;
 
-        &__categories-submenu--open {
+        &-link {
             display: block;
-            .header__categories-submenu-item {
+            line-height: fn.to-rem(56px);
+            text-transform: uppercase;
+            -webkit-background-clip: text;
+            background-clip: text;
+            background: -webkit-linear-gradient(
+                map-get(clr.$colors, indigo-primary),
+                map-get(clr.$colors, indigo-secondary)
+            );
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+            color: transparent;
+        }
+
+        @include mxn.respond-to(mobile) {
+            &-item {
                 width: fn.to-rem(300px);
                 height: fn.to-rem(56px);
                 margin-left: fn.to-rem(24px);
             }
-            .header__categories-submenu-link {
+            &-link {
+                &:hover {
+                    font-weight: map-get(var.$font-weight, medium);
+                }
+            }
+        }
+        @include mxn.respond-to(tablet) {
+            &-item {
                 width: 100%;
-                display: block;
-                line-height: fn.to-rem(56px);
-                text-transform: uppercase;
-                -webkit-background-clip: text;
-                background-clip: text;
-                background: -webkit-linear-gradient(
-                    map-get(clr.$colors, indigo-primary),
-                    map-get(clr.$colors, indigo-secondary)
-                );
-                -webkit-background-clip: text;
-                background-clip: text;
-                -webkit-text-fill-color: transparent;
-                color: transparent;
+                height: fn.to-rem(64px);
+                margin-left: fn.to-rem(0px);
+            }
+            &-link {
+                padding-left: fn.to-rem(24px);
+                height: fn.to-rem(64px);
+                @include mxn.flex-layout(row, $align: center);
+                width: 100%;
+                &:hover {
+                    background: map-get(clr.$colors, gradient-indigo);
+                    -webkit-text-fill-color: map-get(clr.$colors, white);
+                }
             }
         }
     }
 
-    @include mxn.respond-to(tablet) {
-        padding: fn.to-rem(18px) fn.to-rem(80px);
-
-        &__nav {
-            min-width: fn.to-rem(437px);
-            display: block;
-            height: fn.to-rem(44px);
+    &__categories-submenu--open {
+        display: block;
+        @include mxn.respond-to(tablet) {
+            position: absolute;
+            background-color: map-get(clr.$colors, white);
+            width: fn.to-rem(181px);
         }
+    }
 
-        &__menu {
+    &__menu {
+        @include mxn.respond-to(tablet) {
             width: 100%;
             height: 100%;
             @include mxn.flex-layout(row, space-between);
@@ -117,6 +189,11 @@
                 padding-right: fn.to-rem(32px);
                 line-height: 100%;
                 position: relative;
+                width: auto;
+                margin-left: 0;
+                text-align: initial;
+                font-weight: normal;
+                color: initial;
 
                 &:hover,
                 &--active {
@@ -125,31 +202,44 @@
                 }
             }
         }
+        @include mxn.respond-to(desktop) {
+            justify-content: flex-start;
+        }
+    }
 
-        &__menu-btn-categories {
+    &__menu-btn-categories {
+        @include mxn.respond-to(tablet) {
             &--active {
                 background: map-get(clr.$colors, gradient-indigo);
                 color: map-get(clr.$colors, white);
             }
         }
+    }
 
-        &__nav-logo {
-            width: fn.to-rem(264px);
-        }
-        &__hamburger {
+    &__hamburger {
+        @include mxn.respond-to(tablet) {
             display: none;
         }
+    }
 
-        &__action-item:first-child {
+    &__action-item:first-child {
+        @include mxn.respond-to(tablet) {
             display: none;
         }
+    }
 
-        &__logo {
+    &__logo {
+        @include mxn.respond-to(tablet) {
             @include mxn.flex-layout(row, center, center);
             gap: fn.to-rem(11px);
         }
+        @include mxn.respond-to(desktop) {
+            margin-right: fn.to-rem(58px);
+        }
+    }
 
-        &__logo-name {
+    &__logo-name {
+        @include mxn.respond-to(tablet) {
             display: flex;
             font-size: fn.to-rem(30px);
             font-family: 'JosefinSans';
@@ -160,73 +250,6 @@
             }
             &--books {
                 display: inline;
-                font-weight: map-get(var.$font-weight, regular);
-            }
-        }
-        &__action {
-            width: fn.to-rem(131px);
-            padding-right: fn.to-rem(0px);
-        }
-
-        &__categories-submenu--open {
-            display: block;
-            position: absolute;
-            background-color: map-get(clr.$colors, white);
-
-            width: fn.to-rem(181px);
-            .header__categories-submenu-item {
-                width: 100%;
-                margin-left: fn.to-rem(0px);
-            }
-            .header__categories-submenu-link {
-                padding-left: fn.to-rem(24px);
-                height: fn.to-rem(64px);
-                @include mxn.flex-layout(row, $align: center);
-                width: 100%;
-
-                &:hover {
-                    background: map-get(clr.$colors, gradient-indigo);
-                    -webkit-text-fill-color: map-get(clr.$colors, white);
-                }
-            }
-        }
-    }
-
-    @include mxn.respond-to(desktop) {
-        padding-top: fn.to-rem(20px);
-
-        &__menu {
-            .header__menu-btn {
-                padding-right: fn.to-rem(34px);
-            }
-        }
-        &__nav-logo {
-            height: fn.to-rem(40px);
-        }
-
-        &__logo {
-            margin-right: fn.to-rem(58px);
-        }
-        &__nav {
-            width: fn.to-rem(932px);
-        }
-
-        &__menu {
-            justify-content: flex-start;
-        }
-
-        &__action {
-            width: fn.to-rem(372px);
-            &-item a {
-                @include mxn.flex-layout(row, $align: center);
-                gap: fn.to-rem(8px);
-            }
-
-            &-item-name {
-                display: inline;
-                padding-bottom: fn.to-rem(4px);
-                text-transform: capitalize;
-                font-size: fn.to-rem(20px);
                 font-weight: map-get(var.$font-weight, regular);
             }
         }
