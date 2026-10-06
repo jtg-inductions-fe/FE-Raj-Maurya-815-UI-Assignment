@@ -1,37 +1,9 @@
 @use '../abstracts/variables' as abs;
+@use '../abstracts/mixins' as mxn;
 
-@font-face {
-    font-family: 'Poppins';
-    src: url('/assets/fonts/Poppins-Bold.ttf') format('truetype');
-    font-weight: map-get(abs.$font-weight, bold);
-}
-
-@font-face {
-    font-family: 'Poppins';
-    src: url('/assets/fonts/Poppins-Light.ttf') format('truetype');
-    font-weight: map-get(abs.$font-weight, light);
-}
-
-@font-face {
-    font-family: 'Poppins';
-    src: url('/assets/fonts/Poppins-Medium.ttf') format('truetype');
-    font-weight: map-get(abs.$font-weight, medium);
-}
-
-@font-face {
-    font-family: 'Poppins';
-    src: url('/assets/fonts/Poppins-Regular.ttf') format('truetype');
-    font-weight: map-get(abs.$font-weight, regular);
-}
-
-@font-face {
-    font-family: 'JosefinSans';
-    src: url('/assets/fonts/JosefinSans-Bold.ttf') format('truetype');
-    font-weight: map-get(abs.$font-weight, bold);
-}
-
-@font-face {
-    font-family: 'JosefinSans';
-    src: url('/assets/fonts/JosefinSans-Regular.ttf') format('truetype');
-    font-weight: map-get(abs.$font-weight, regular);
-}
+@include mxn.font-face('Poppins', 'Poppins-Bold', bold);
+@include mxn.font-face('Poppins', 'Poppins-Light', light);
+@include mxn.font-face('Poppins', 'Poppins-Medium', medium);
+@include mxn.font-face('Poppins', 'Poppins-Regular', regular);
+@include mxn.font-face('JosefinSans', 'JosefinSans-Bold', bold);
+@include mxn.font-face('JosefinSans', 'JosefinSans-Regular', regular);

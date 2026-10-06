@@ -1,0 +1,37 @@
+@use '../abstracts/mixins' as mxn;
+@use '../abstracts/variables' as var;
+@use '../abstracts/colors' as clr;
+@use '../abstracts/functions' as fn;
+
+.menu {
+    &__btn {
+        width: fn.to-rem(250px);
+        height: fn.to-rem(56px);
+        margin-left: fn.to-rem(24px);
+        text-align: left;
+        text-transform: uppercase;
+        font-weight: map-get(var.$font-weight, regular);
+        padding-left: fn.to-rem(10px);
+
+        &:hover,
+        &--active {
+            background: map-get(clr.$colors, gradient-indigo);
+            color: map-get(clr.$colors, white);
+        }
+        @include mxn.respond-to(tablet) {
+            text-transform: uppercase;
+            height: 100%;
+            padding-left: fn.to-rem(10px);
+            padding-right: fn.to-rem(32px);
+            line-height: 100%;
+            position: relative;
+            width: auto;
+            margin-left: 0;
+            text-align: initial;
+            font-weight: normal;
+        }
+        @include mxn.respond-to(desktop) {
+            padding-right: fn.to-rem(34px);
+        }
+    }
+}
