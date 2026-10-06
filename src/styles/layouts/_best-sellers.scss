@@ -30,11 +30,11 @@
     &__content {
         @include mxn.respond-to(mobile) {
             background-color: map-get(clr.$colors, solitude);
-            padding-bottom: fn.to-rem(20px);
+            padding-bottom: fn.to-rem(16px);
         }
         @include mxn.respond-to(tablet) {
             @include mxn.flex-layout(column, $align: center);
-            padding-bottom: fn.to-rem(46px);
+            padding-bottom: fn.to-rem(50px);
         }
         @include mxn.respond-to(desktop) {
             @include mxn.flex-layout(row, center, flex-start);

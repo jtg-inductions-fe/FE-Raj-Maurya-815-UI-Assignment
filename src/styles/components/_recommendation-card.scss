@@ -62,6 +62,7 @@
             @include mxn.flex-layout(row, flex-start);
             margin-top: auto;
             gap: fn.to-rem(28px);
+            margin-bottom: 6px;
             margin-left: fn.to-rem(11px);
         }
         @include mxn.respond-to(tablet) {
