@@ -35,11 +35,11 @@
     }
 
     &--xsm {
-        font-size: map-get(var.$font-size, 'size-3');
+        font-size: map-get(var.$font-size, 'lg');
         font-weight: map-get(var.$font-weight, medium);
 
         @include mxn.respond-to(tablet) {
-            font-size: map-get(var.$font-size, 'size-5');
+            font-size: map-get(var.$font-size, '2xl');
         }
     }
 }
