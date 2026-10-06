@@ -4,35 +4,37 @@
 @use '../abstracts/functions' as fn;
 
 .latest-releases {
-    margin-top: fn.to-rem(20px);
+    @include mxn.respond-to(mobile) {
+        margin-top: fn.to-rem(20px);
+    }
+    @include mxn.respond-to(tablet) {
+        margin-top: fn.to-rem(51px);
+    }
+    @include mxn.respond-to(desktop) {
+        margin-top: fn.to-rem(42px);
+    }
 
     &__heading {
-        text-align: center;
-        margin-bottom: fn.to-rem(8px);
+        @include mxn.respond-to(mobile) {
+            text-align: center;
+            margin-bottom: fn.to-rem(8px);
+        }
+        @include mxn.respond-to(tablet) {
+            margin-bottom: fn.to-rem(16px);
+        }
+        @include mxn.respond-to(desktop) {
+            text-align: center;
+        }
     }
 
     &__content {
         background-color: map-get(clr.$colors, solitude);
         padding-bottom: fn.to-rem(20px);
-    }
-
-    @include mxn.respond-to(tablet) {
-        margin-top: fn.to-rem(51px);
-
-        &__heading {
-            margin-bottom: fn.to-rem(16px);
-        }
-        &__content {
+        @include mxn.respond-to(tablet) {
+            min-height: fn.to-rem(762px);
             @include mxn.flex-layout(column, $align: center);
         }
-    }
-
-    @include mxn.respond-to(desktop) {
-        margin-top: fn.to-rem(42px);
-        &__heading {
-            text-align: center;
-        }
-        &__content {
+        @include mxn.respond-to(desktop) {
             @include mxn.flex-layout(row, center);
             min-height: fn.to-rem(506px);
             gap: fn.to-rem(48px);
