@@ -14,122 +14,109 @@
             </p>
         </noscript>
         <header class="header">
-            <div class="header__nav-logo">
+            <div class="header__brand">
                 <button class="header__hamburger icon-opacity">
                     <img src="/assets/icons/Menu.svg" alt="menu button" />
                 </button>
 
-                <a href="#" class="header__logo icon-opacity">
+                <a href="#" class="header__logo logo">
                     <img
-                        class="header__logo-icon"
+                        class="logo__icon"
                         src="/assets/icons/Logo.svg"
                         alt="alurobooks logo"
                     />
-                    <div class="header__logo-name">
-                        <span class="header__logo-name--alura">Alura</span>
-                        <span class="header__logo-name--books">Books</span>
+                    <div class="logo__name name">
+                        <span class="name__primary">Alura</span>
+                        <span class="name__secondary">Books</span>
                     </div>
                 </a>
             </div>
             <nav class="header__nav">
-                <ul class="header__menu">
-                    <li class="header__item">
-                        <button
-                            class="header__menu-btn header__menu-btn-categories"
-                        >
-                            categories
-                        </button>
-                        <ul class="header__categories-submenu">
-                            <li class="header__categories-submenu-item">
-                                <a
-                                    class="header__categories-submenu-link"
-                                    href="#"
-                                >
+                <ul class="header__menu menu">
+                    <li class="menu__item">
+                        <button class="menu__btn">categories</button>
+                        <ul class="menu__submenu submenu">
+                            <li class="submenu__item">
+                                <a class="submenu__link" href="#">
                                     programming
                                 </a>
                             </li>
-                            <li class="header__categories-submenu-item">
-                                <a
-                                    class="header__categories-submenu-link"
-                                    href="#"
-                                >
+                            <li class="submenu__item">
+                                <a class="submenu__link" href="#">
                                     front-end
                                 </a>
                             </li>
-                            <li class="header__categories-submenu-item">
-                                <a
-                                    class="header__categories-submenu-link"
-                                    href="#"
-                                >
+                            <li class="submenu__item">
+                                <a class="submenu__link" href="#">
                                     infrastructure
                                 </a>
                             </li>
-                            <li class="header__categories-submenu-item">
-                                <a
-                                    class="header__categories-submenu-link"
-                                    href="#"
-                                >
-                                    business
-                                </a>
+                            <li class="submenu__item">
+                                <a class="submenu__link" href="#"> business </a>
                             </li>
-                            <li class="header__categories-submenu-item">
-                                <a
-                                    class="header__categories-submenu-link"
-                                    href="#"
-                                >
+                            <li class="submenu__item">
+                                <a class="submenu__link" href="#">
                                     design & ux
                                 </a>
                             </li>
                         </ul>
                     </li>
 
-                    <li class="header__item">
-                        <button class="header__menu-btn">favorites</button>
+                    <li class="menu__item">
+                        <button class="menu__btn">favorites</button>
                     </li>
 
-                    <li class="header__item">
-                        <button class="header__menu-btn">my bookshelf</button>
+                    <li class="menu__item">
+                        <button class="menu__btn">my bookshelf</button>
                     </li>
                 </ul>
             </nav>
 
-            <ul class="header__action">
-                <li class="header__action-item">
-                    <a href="#" class="icon-opacity"
+            <ul class="header__action action">
+                <li class="action__item">
+                    <a href="#" class="icon-opacity action__link"
                         ><img
+                            class="action__image"
                             src="/assets/icons/Favoritos_header.svg"
                             alt="wishlist"
                     /></a>
                 </li>
-                <li class="header__action-item">
-                    <a href="#" class="icon-opacity"
-                        ><img src="/assets/icons/bag.svg" alt="cart" /><span
-                            class="header__action-item-name"
-                            >my bag</span
-                        ></a
+                <li class="action__item">
+                    <a href="#" class="icon-opacity action__link"
+                        ><img
+                            src="/assets/icons/bag.svg"
+                            alt="cart"
+                            class="action__image"
+                        /><span class="action__name">my bag</span></a
                     >
                 </li>
-                <li class="header__action-item">
-                    <a href="#" class="icon-opacity"
+                <li class="action__item">
+                    <a href="#" class="icon-opacity action__link"
                         ><img
+                            class="action__image"
                             src="/assets/icons/profile.svg"
                             alt="profile"
-                        /><span class="header__action-item-name"
-                            >my profile</span
-                        ></a
+                        /><span class="action__name">my profile</span></a
                     >
                 </li>
             </ul>
         </header>
 
         <section class="hero">
-            <h2 class="heading--xl">Do you already know where to start?</h2>
-            <p class="text--lg">
+            <h2 class="hero__heading heading--xl">
+                Do you already know where to start?
+            </h2>
+            <p class="hero__description text--lg">
                 Find what you need for your development on our bookshelf!
             </p>
-            <label class="hero__search">
-                <img src="/assets/icons/search.svg" alt="search" />
+            <label class="hero__search search">
+                <img
+                    src="/assets/icons/search.svg"
+                    alt="search"
+                    class="search__icon"
+                />
                 <input
+                    class="search__input"
                     type="search"
                     placeholder="What will your next read be?"
                 />

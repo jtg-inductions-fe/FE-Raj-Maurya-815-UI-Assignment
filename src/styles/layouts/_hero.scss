@@ -4,98 +4,42 @@
 @use '../abstracts/functions' as fn;
 
 .hero {
+    background: map-get(clr.$colors, gradient-indigo);
+    @include mxn.flex-layout(column, $align: center);
     @include mxn.respond-to(mobile) {
         margin-top: fn.to-rem(1px);
-        height: fn.to-rem(215px);
-        background: map-get(clr.$colors, gradient-indigo);
-        @include mxn.flex-layout(column, $align: center);
-
-        h2 {
-            margin-top: fn.to-rem(32px);
-            margin-bottom: fn.to-rem(8px);
-            color: map-get(clr.$colors, white);
-        }
-
-        p {
-            height: fn.to-rem(48px);
-            margin-bottom: fn.to-rem(24px);
-            width: fn.to-rem(316px);
-            color: map-get(clr.$colors, white);
-            text-align: center;
-        }
-
-        &__search {
-            @include mxn.flex-layout(row, space-between, center);
-            border: fn.to-rem(1px) solid map-get(clr.$colors, white);
-            border-radius: fn.to-rem(24px);
-            padding: fn.to-rem(0px);
-            gap: fn.to-rem(10px);
-            height: fn.to-rem(44px);
-            width: fn.to-rem(380px);
-            cursor: text;
-
-            img {
-                margin-left: fn.to-rem(74.5px);
-            }
-
-            input {
-                width: 100%;
-                font-size: fn.to-rem(14px);
-                border: none;
-                outline: none;
-                height: fn.to-rem(21px);
-                font-weight: map-get(var.$font-weight, regular);
-                background: transparent;
-                color: map-get(clr.$colors, white);
-                &::placeholder {
-                    color: map-get(clr.$colors, white);
-                }
-                &::-webkit-search-cancel-button {
-                    cursor: pointer;
-                    padding-right: fn.to-rem(20px);
-                }
-            }
-        }
+        min-height: fn.to-rem(215px);
     }
-
     @include mxn.respond-to(tablet) {
         margin-top: fn.to-rem(0px);
-        height: fn.to-rem(330px);
+        min-height: fn.to-rem(329px);
+    }
 
-        h2 {
+    &__heading {
+        color: map-get(clr.$colors, white);
+        @include mxn.respond-to(mobile) {
+            margin-top: fn.to-rem(32px);
+            margin-bottom: fn.to-rem(8px);
+        }
+        @include mxn.respond-to(tablet) {
             margin-top: fn.to-rem(84px);
             margin-bottom: fn.to-rem(2px);
-            height: fn.to-rem(54px);
-        }
-
-        p {
-            height: fn.to-rem(24px);
-            width: fn.to-rem(479px);
-            margin-bottom: fn.to-rem(26px);
-        }
-
-        &__search {
-            height: fn.to-rem(56px);
-            width: fn.to-rem(476px);
-
-            img {
-                margin-left: fn.to-rem(108.5px);
-            }
-
-            input {
-                font-size: fn.to-rem(16px);
-                height: fn.to-rem(24px);
-            }
+            min-height: fn.to-rem(54px);
         }
     }
 
-    @include mxn.respond-to(desktop) {
-        &__search {
-            width: fn.to-rem(586px);
-
-            img {
-                margin-left: fn.to-rem(163.5px);
-            }
+    &__description {
+        color: map-get(clr.$colors, white);
+        text-align: center;
+        @include mxn.respond-to(mobile) {
+            min-height: fn.to-rem(48px);
+            margin-bottom: fn.to-rem(24px);
+            width: fn.to-rem(316px);
+        }
+        @include mxn.respond-to(tablet) {
+            min-height: fn.to-rem(24px);
+            width: fn.to-rem(479px);
+            margin-bottom: fn.to-rem(26px);
         }
     }
 }
