@@ -99,31 +99,31 @@
         @include mxn.respond-to(desktop) {
             margin-right: fn.to-rem(2px);
         }
-    }
 
-    &__image {
-        @include mxn.respond-to(mobile) {
-            margin-top: fn.to-rem(5px);
+        &-image {
+            @include mxn.respond-to(mobile) {
+                margin-top: fn.to-rem(5px);
+            }
+            @include mxn.respond-to(tablet) {
+                margin-top: fn.to-rem(0px);
+                min-height: fn.to-rem(151.41px);
+                width: fn.to-rem(146px);
+            }
+            @include mxn.respond-to(desktop) {
+                margin-top: fn.to-rem(8px);
+            }
         }
-        @include mxn.respond-to(tablet) {
-            margin-top: fn.to-rem(0px);
-            min-height: fn.to-rem(151.41px);
-            width: fn.to-rem(146px);
-        }
-        @include mxn.respond-to(desktop) {
-            margin-top: fn.to-rem(8px);
-        }
-    }
 
-    &__button {
-        color: map-get(clr.$colors, white);
-        min-height: fn.to-rem(48px);
-        background-color: map-get(clr.$colors, accent);
-        @include mxn.respond-to(mobile) {
-            width: fn.to-rem(161px);
-        }
-        @include mxn.respond-to(tablet) {
-            width: fn.to-rem(146px);
+        &-button {
+            color: map-get(clr.$colors, white);
+            min-height: fn.to-rem(48px);
+            background-color: map-get(clr.$colors, accent);
+            @include mxn.respond-to(mobile) {
+                width: fn.to-rem(161px);
+            }
+            @include mxn.respond-to(tablet) {
+                width: fn.to-rem(146px);
+            }
         }
     }
 }
