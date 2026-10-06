@@ -1,0 +1,27 @@
+@use '../abstracts/mixins' as mxn;
+@use '../abstracts/variables' as var;
+@use '../abstracts/colors' as clr;
+@use '../abstracts/functions' as fn;
+
+.name {
+    &__primary,
+    &__secondary {
+        @include mxn.respond-to(mobile) {
+            display: none;
+        }
+    }
+    @include mxn.respond-to(tablet) {
+        display: flex;
+        font-size: fn.to-rem(30px);
+        font-family: 'JosefinSans';
+        padding-top: fn.to-rem(10px);
+        &__primary {
+            display: inline;
+            font-weight: map-get(var.$font-weight, bold);
+        }
+        &__secondary {
+            display: inline;
+            font-weight: map-get(var.$font-weight, regular);
+        }
+    }
+}

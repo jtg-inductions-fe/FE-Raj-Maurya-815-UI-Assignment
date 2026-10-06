@@ -2,42 +2,12 @@
 @use './variables' as var;
 
 @mixin respond-to($breakpoint-passed) {
-    @if map.has-key(var.$breakpoints, $breakpoint-passed) {
-        @media (min-width: map.get(var.$breakpoints,$breakpoint-passed)) {
-            @content;
-        }
-    } @else {
-        @error " breakpoint- #{$breakpoint-passed}, doesn't exist";
+    @media (min-width: map.get(var.$breakpoints,$breakpoint-passed)) {
+        @content;
     }
 }
 
 @mixin flex-layout($direction: null, $justify: null, $align: null) {
-    @if $direction != null and not ($direction in (row, column)) {
-        @error "Invalid flex-direction value";
-    }
-    @if $justify !=
-        null and not
-        (
-            $justify
-                in (
-                    center,
-                    flex-start,
-                    flex-end,
-                    space-between,
-                    space-around,
-                    space-evenly
-                )
-        )
-    {
-        @error "Invalid justify-content value";
-    }
-    @if $align !=
-        null and not
-        ($align in (center, flex-start, flex-end, stretch))
-    {
-        @error "Invalid align-items value";
-    }
-
     display: flex;
     flex-direction: $direction;
     justify-content: $justify;
