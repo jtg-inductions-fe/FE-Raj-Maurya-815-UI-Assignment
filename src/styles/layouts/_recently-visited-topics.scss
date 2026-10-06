@@ -11,12 +11,8 @@
         padding-bottom: fn.to-rem(24px);
     }
     @include mxn.respond-to(tablet) {
-        min-height: fn.to-rem(332px);
         margin-top: fn.to-rem(0px);
         padding-bottom: fn.to-rem(32px);
-    }
-    @include mxn.respond-to(desktop) {
-        min-height: fn.to-rem(418px);
     }
 
     &__heading {
