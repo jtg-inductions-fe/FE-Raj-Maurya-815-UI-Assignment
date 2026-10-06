@@ -1,102 +1,42 @@
 @use '../abstracts/mixins' as mxn;
 @use '../abstracts/variables' as var;
 @use '../abstracts/colors' as clr;
+@use '../abstracts/functions' as fn;
 
 .hero {
-    margin-top: 1px;
-    height: 215px;
-    background: clr.$gradient-indigo;
-    display: flex;
-    flex-direction: column;
-    align-items: center;
-
-    h2 {
-        margin-top: 32px;
-        margin-bottom: 8px;
-        color: clr.$white;
+    background: map-get(clr.$colors, gradient-indigo);
+    @include mxn.flex-layout(column, $align: center);
+    @include mxn.respond-to(mobile) {
+        margin-top: fn.to-rem(1px);
+        padding-bottom: fn.to-rem(24px);
     }
-
-    p {
-        height: 48px;
-        margin-bottom: 24px;
-        width: 316px;
-        color: clr.$white;
-        text-align: center;
-    }
-
-    &__search {
-        display: flex;
-        justify-content: space-between;
-        align-items: center;
-        border: 1px solid clr.$white;
-        border-radius: 24px;
-        padding: 0 px;
-        gap: 10px;
-        height: 44px;
-        width: 380px;
-        cursor: text;
-
-        img {
-            margin-left: 74.5px;
-        }
-
-        input {
-            width: 100%;
-            font-size: 14px;
-            border: none;
-            outline: none;
-            height: 21px;
-            font-weight: map-get(var.$font-weight, regular);
-            background: transparent;
-            color: clr.$white;
-            &::placeholder {
-                color: clr.$white;
-            }
-            &::-webkit-search-cancel-button {
-                cursor: pointer;
-                padding-right: 20px;
-            }
-        }
-    }
-
     @include mxn.respond-to(tablet) {
-        margin-top: 0px;
-        height: 330px;
+        margin-top: fn.to-rem(0px);
+        padding-bottom: fn.to-rem(72px);
+    }
 
-        h2 {
-            margin-top: 84px;
-            margin-bottom: 2px;
-            height: 54px;
+    &__heading {
+        color: map-get(clr.$colors, white);
+        @include mxn.respond-to(mobile) {
+            margin-top: fn.to-rem(32px);
+            margin-bottom: fn.to-rem(8px);
         }
-
-        p {
-            height: 24px;
-            width: 479px;
-            margin-bottom: 26px;
-        }
-
-        &__search {
-            height: 56px;
-            width: 476px;
-
-            img {
-                margin-left: 108.5px;
-            }
-
-            input {
-                font-size: 16px;
-                height: 24px;
-            }
+        @include mxn.respond-to(tablet) {
+            margin-top: fn.to-rem(84px);
+            margin-bottom: fn.to-rem(2px);
         }
     }
 
-    @include mxn.respond-to(desktop) {
-        &__search {
-            width: 586px;
-
-            img {
-                margin-left: 163.5px;
-            }
+    &__description {
+        color: map-get(clr.$colors, white);
+        text-align: center;
+        @include mxn.respond-to(mobile) {
+            margin-bottom: fn.to-rem(24px);
+            width: fn.to-rem(316px);
+        }
+        @include mxn.respond-to(tablet) {
+            width: fn.to-rem(480px);
+            margin-bottom: fn.to-rem(26px);
         }
     }
 }
