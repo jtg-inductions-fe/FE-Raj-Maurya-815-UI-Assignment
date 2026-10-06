@@ -3,24 +3,72 @@
 @use '../abstracts/colors' as clr;
 @use '../abstracts/functions' as fn;
 
-.swiper-pagination {
-    position: relative !important;
-    bottom: fn.to-rem(0px) !important;
-    margin-top: fn.to-rem(3px);
-    margin-bottom: fn.to-rem(8px);
-}
+.carousel {
+    @include mxn.respond-to(tablet) {
+        width: fn.to-rem(756px);
+        position: relative;
+    }
+    @include mxn.respond-to(desktop) {
+        width: fn.to-rem(700px);
+    }
 
-.swiper-button-prev,
-.swiper-button-next {
-    display: none !important;
-}
-
-.swiper-slide {
-    height: fn.to-rem(249px) !important;
-    &-img {
+    &__img {
         height: 100%;
         width: 100%;
         object-fit: contain;
+    }
+}
+
+.swiper {
+    @include mxn.respond-to(tablet) {
+        width: 100%;
+        height: fn.to-rem(416px);
+        position: relative !important;
+    }
+}
+
+.swiper-wrapper {
+    @include mxn.respond-to(tablet) {
+        align-items: center;
+    }
+    @include mxn.respond-to(desktop) {
+        height: fn.to-rem(320px) !important;
+    }
+}
+
+.swiper-pagination {
+    position: relative !important;
+    bottom: fn.to-rem(0px) !important;
+    @include mxn.respond-to(mobile) {
+        margin-top: fn.to-rem(3px);
+        margin-bottom: fn.to-rem(8px);
+    }
+    @include mxn.respond-to(tablet) {
+        margin-top: fn.to-rem(24px);
+        margin-bottom: fn.to-rem(0px);
+    }
+    @include mxn.respond-to(desktop) {
+        margin-top: fn.to-rem(32px);
+    }
+}
+
+.swiper-slide {
+    @include mxn.respond-to(mobile) {
+        height: fn.to-rem(249px) !important;
+    }
+    @include mxn.respond-to(tablet) {
+        height: fn.to-rem(266px) !important;
+    }
+    @include mxn.respond-to(desktop) {
+        height: fn.to-rem(253px) !important;
+    }
+}
+
+.swiper-pagination-bullet {
+    @include mxn.respond-to(tablet) {
+        width: fn.to-rem(12px) !important;
+        height: fn.to-rem(12px) !important;
+        margin-right: fn.to-rem(8px) !important;
     }
 }
 
@@ -28,36 +76,12 @@
     background-color: map-get(clr.$colors, indigo-primary) !important;
 }
 
-@include mxn.respond-to(tablet) {
-    .swiper-pagination-bullet {
-        width: fn.to-rem(12px) !important;
-        height: fn.to-rem(12px) !important;
-        margin-right: fn.to-rem(8px) !important;
+.swiper-button-prev,
+.swiper-button-next {
+    @include mxn.respond-to(mobile) {
+        display: none !important;
     }
-    .swiper-pagination {
-        margin-top: fn.to-rem(24px);
-        margin-bottom: fn.to-rem(0px);
-    }
-    .carousel-wrapper {
-        width: fn.to-rem(756px);
-        position: relative !important;
-    }
-    .swiper {
-        width: 100%;
-        height: fn.to-rem(416px);
-        position: relative !important;
-    }
-
-    .swiper-wrapper {
-        align-items: center;
-    }
-
-    .swiper-slide {
-        height: fn.to-rem(266px) !important;
-    }
-
-    .swiper-button-prev,
-    .swiper-button-next {
+    @include mxn.respond-to(tablet) {
         display: flex !important;
         position: absolute;
         top: 60% !important;
@@ -73,30 +97,18 @@
             object-fit: contain;
         }
     }
+    @include mxn.respond-to(desktop) {
+        top: 52% !important;
+    }
+}
 
-    .swiper-button-prev {
+.swiper-button-prev {
+    @include mxn.respond-to(tablet) {
         left: fn.to-rem(-29px) !important;
     }
-    .swiper-button-next {
+}
+.swiper-button-next {
+    @include mxn.respond-to(tablet) {
         right: fn.to-rem(-29px) !important;
-    }
-
-    @include mxn.respond-to(desktop) {
-        .carousel-wrapper {
-            width: fn.to-rem(700px);
-        }
-        .swiper-wrapper {
-            height: fn.to-rem(320px) !important;
-        }
-        .swiper-slide {
-            height: fn.to-rem(253px) !important;
-        }
-        .swiper-button-prev,
-        .swiper-button-next {
-            top: 52% !important;
-        }
-        .swiper-pagination {
-            margin-top: fn.to-rem(32px);
-        }
     }
 }

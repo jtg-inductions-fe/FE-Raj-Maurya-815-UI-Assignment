@@ -1,0 +1,63 @@
+@use '../abstracts/mixins' as mxn;
+@use '../abstracts/variables' as var;
+@use '../abstracts/colors' as clr;
+@use '../abstracts/functions' as fn;
+
+.search {
+    @include mxn.flex-layout(row, space-between, center);
+    border: fn.to-rem(1px) solid map-get(clr.$colors, white);
+    border-radius: fn.to-rem(24px);
+    padding: fn.to-rem(0px);
+    gap: fn.to-rem(10px);
+    cursor: text;
+    margin-bottom: 10px;
+
+    @include mxn.respond-to(mobile) {
+        height: fn.to-rem(44px);
+        width: fn.to-rem(380px);
+    }
+    @include mxn.respond-to(tablet) {
+        height: fn.to-rem(56px);
+        width: fn.to-rem(476px);
+    }
+    @include mxn.respond-to(desktop) {
+        width: fn.to-rem(586px);
+    }
+
+    &__icon {
+        @include mxn.respond-to(mobile) {
+            margin-left: fn.to-rem(74.5px);
+        }
+        @include mxn.respond-to(tablet) {
+            margin-left: fn.to-rem(108.5px);
+        }
+        @include mxn.respond-to(desktop) {
+            margin-left: fn.to-rem(163.5px);
+        }
+    }
+
+    &__input {
+        width: 100%;
+        border: none;
+        outline: none;
+        font-weight: map-get(var.$font-weight, regular);
+        background: transparent;
+        color: map-get(clr.$colors, white);
+        &::placeholder {
+            color: map-get(clr.$colors, white);
+        }
+        &::-webkit-search-cancel-button {
+            cursor: pointer;
+            padding-right: fn.to-rem(20px);
+        }
+
+        @include mxn.respond-to(mobile) {
+            font-size: fn.to-rem(14px);
+            height: fn.to-rem(21px);
+        }
+        @include mxn.respond-to(tablet) {
+            font-size: fn.to-rem(16px);
+            height: fn.to-rem(24px);
+        }
+    }
+}
