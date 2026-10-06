@@ -8,11 +8,11 @@
     gap: fn.to-rem(8px);
     height: fn.to-rem(44px);
     @include mxn.respond-to(mobile) {
-        width: fn.to-rem(168.88px);
+        width: fn.to-rem(168px);
         padding: fn.to-rem(6px) fn.to-rem(6px) fn.to-rem(0px) fn.to-rem(8px);
     }
     @include mxn.respond-to(tablet) {
-        width: fn.to-rem(131px);
+        width: fn.to-rem(132px);
         padding-right: fn.to-rem(0px);
     }
     @include mxn.respond-to(desktop) {

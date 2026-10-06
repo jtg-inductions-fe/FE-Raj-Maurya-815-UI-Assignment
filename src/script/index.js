@@ -51,7 +51,7 @@ window.addEventListener('resize', () => {
     }
 });
 
-new Swiper('.latest-releases__carousel', {
+new Swiper('.latest-releases .carousel__swiper', {
     modules: [Navigation, Pagination],
     slidesPerView: 2.15,
     centeredSlides: true,
@@ -73,13 +73,13 @@ new Swiper('.latest-releases__carousel', {
     },
 });
 
-new Swiper('.best-sellers__carousel', {
+new Swiper('.best-sellers  .carousel__swiper', {
     modules: [Navigation, Pagination],
     slidesPerView: 2.15,
     centeredSlides: true,
 
     pagination: {
-        el: '.best-sellers__carousel .swiper-pagination',
+        el: '.best-sellers .swiper-pagination',
         clickable: true,
     },
     navigation: {
