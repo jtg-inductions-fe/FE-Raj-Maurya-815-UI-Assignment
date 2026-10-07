@@ -1,27 +1,53 @@
 @use '../abstracts/variables' as var;
 @use '../abstracts/mixins' as mxn;
 @use '../abstracts/colors' as clr;
+@use '../abstracts/functions' as fn;
 
 .signup-email {
-    display: flex;
-    align-items: center;
-    flex-direction: column;
-    justify-content: flex-start;
-    min-height: 151px;
-    min-width: 381px;
-    margin: 24px 23px 30px 24px;
-    gap: 24px;
+    gap: fn.to-rem(24px);
+    @include mxn.respond-to(mobile) {
+        @include mxn.flex-layout(column, flex-start, center);
+        margin: fn.to-rem(24px) fn.to-rem(24px) fn.to-rem(30px) fn.to-rem(24px);
+    }
+    @include mxn.respond-to(tablet) {
+        flex-direction: row;
+        justify-content: center;
+        margin: fn.to-rem(30px) auto fn.to-rem(53px) auto;
+    }
+    @include mxn.respond-to(desktop) {
+        margin: fn.to-rem(64px) auto fn.to-rem(28px) auto;
+    }
 
     &__text {
-        display: flex;
-        flex-direction: column;
-        gap: 8px;
+        @include mxn.respond-to(mobile) {
+            @include mxn.flex-layout(column);
+            gap: fn.to-rem(8px);
+        }
+        @include mxn.respond-to(tablet) {
+            width: fn.to-rem(372px);
+            gap: fn.to-rem(14px);
+        }
+        @include mxn.respond-to(desktop) {
+            width: fn.to-rem(401px);
+            gap: fn.to-rem(4px);
+        }
     }
-    &__text-heading,
+
+    &__description {
+        @include mxn.respond-to(tablet) {
+            width: fn.to-rem(354px);
+        }
+        @include mxn.respond-to(desktop) {
+            width: fn.to-rem(378px);
+        }
+    }
+
+    &__heading,
+    &__description,
     &__button-text {
         background: -webkit-linear-gradient(
-            clr.$indigo-primary,
-            clr.$indigo-secondary
+            map-get(clr.$colors, indigo-primary),
+            map-get(clr.$colors, indigo-secondary)
         );
         -webkit-background-clip: text;
         background-clip: text;
@@ -30,51 +56,22 @@
     }
 
     &__button {
-        border: 1px solid clr.$indigo-primary;
-        width: 380px;
-        min-height: 44px;
-        border-radius: 24px;
-        padding-left: 24px;
-        gap: 10px;
-        display: flex;
-        align-items: center;
-    }
-
-    @include mxn.respond-to(tablet) {
-        flex-direction: row;
-        justify-content: center;
-        margin: 30px auto 53px auto;
-        gap: 25px;
-        max-width: 725px;
-
-        min-height: 132px;
-
-        &__text {
-            max-width: 372px;
-            &-description {
-                width: 353px;
-            }
+        border: fn.to-rem(1px) solid map-get(clr.$colors, indigo-primary);
+        border-radius: fn.to-rem(24px);
+        padding-top: fn.to-rem(10px);
+        padding-bottom: fn.to-rem(10px);
+        padding-left: fn.to-rem(24px);
+        gap: fn.to-rem(10px);
+        @include mxn.flex-layout(row, $align: center);
+        @include mxn.respond-to(mobile) {
+            width: fn.to-rem(380px);
         }
-
-        &__button {
-            width: 326.91px;
+        @include mxn.respond-to(tablet) {
+            width: fn.to-rem(326px);
         }
-    }
-
-    @include mxn.respond-to(desktop) {
-        margin: 64px auto 28px auto;
-        max-width: 774px;
-        min-height: 124px;
-
-        &__text {
-            max-width: 401px;
-            &-description {
-                width: 377px;
-            }
-        }
-        &__button {
-            width: 349px;
-            margin-bottom: 40px;
+        @include mxn.respond-to(desktop) {
+            width: fn.to-rem(349px);
+            margin-bottom: fn.to-rem(40px);
         }
     }
 }

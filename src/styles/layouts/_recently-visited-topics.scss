@@ -1,61 +1,61 @@
 @use '../abstracts/mixins' as mxn;
 @use '../abstracts/variables' as var;
 @use '../abstracts/colors' as clr;
+@use '../abstracts/functions' as fn;
 
 .recently-visited-topics {
-    margin-top: 16px;
-    min-height: 295px;
-    background: clr.$gradient-indigo;
-    display: flex;
-    flex-direction: column;
-    justify-content: flex-start;
-    align-items: center;
+    background: map-get(clr.$colors, gradient-indigo);
+    @include mxn.flex-layout(column, flex-start, center);
+    @include mxn.respond-to(mobile) {
+        margin-top: fn.to-rem(16px);
+        padding-bottom: fn.to-rem(24px);
+    }
+    @include mxn.respond-to(tablet) {
+        margin-top: fn.to-rem(0px);
+        padding-bottom: fn.to-rem(32px);
+    }
+    @include mxn.respond-to(desktop) {
+        padding-bottom: fn.to-rem(74px);
+    }
 
     &__heading {
-        margin-top: 24px;
-        margin-bottom: 32px;
-        color: clr.$white;
+        color: map-get(clr.$colors, white);
+        @include mxn.respond-to(mobile) {
+            margin-top: fn.to-rem(24px);
+            margin-bottom: fn.to-rem(32px);
+        }
+        @include mxn.respond-to(tablet) {
+            margin-top: fn.to-rem(32px);
+            margin-bottom: fn.to-rem(40px);
+        }
+        @include mxn.respond-to(desktop) {
+            margin-top: fn.to-rem(64px);
+        }
     }
 
-    &__content {
-        display: flex;
-        gap: 16px;
+    &__list {
+        @include mxn.flex-layout(row, center);
         flex-wrap: wrap;
-        justify-content: center;
-    }
-
-    &__topics-link {
-        display: flex;
-        justify-content: center;
-        align-items: center;
-        color: clr.$white;
-        background-color: clr.$accent;
-        padding: 16px 24px 16px 24px;
-    }
-
-    @include mxn.respond-to(tablet) {
-        min-height: 332px;
-        margin-top: 0px;
-
-        &__heading {
-            margin-top: 32px;
-            margin-bottom: 40px;
+        @include mxn.respond-to(mobile) {
+            gap: fn.to-rem(16px);
         }
-
-        &__content {
-            width: 900px;
-            gap: 24px;
-        }
-
-        &__topics-link {
-            padding: 24px 32px 24px 32px;
+        @include mxn.respond-to(tablet) {
+            width: fn.to-rem(900px);
+            gap: fn.to-rem(24px);
         }
     }
 
-    @include mxn.respond-to(desktop) {
-        min-height: 418px;
-        &__heading {
-            margin-top: 64px;
+    &__link {
+        @include mxn.flex-layout(row, center, center);
+        color: map-get(clr.$colors, white);
+        background-color: map-get(clr.$colors, accent);
+        @include mxn.respond-to(mobile) {
+            padding: fn.to-rem(16px) fn.to-rem(24px) fn.to-rem(16px)
+                fn.to-rem(24px);
+        }
+        @include mxn.respond-to(tablet) {
+            padding: fn.to-rem(24px) fn.to-rem(32px) fn.to-rem(24px)
+                fn.to-rem(32px);
         }
     }
 }

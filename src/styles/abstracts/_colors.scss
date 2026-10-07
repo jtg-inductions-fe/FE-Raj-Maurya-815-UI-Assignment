@@ -1,13 +1,11 @@
-$white: #ffffff;
-$accent: #eb9b00;
-$indigo-primary: #002f52;
-$indigo-secondary: #326589;
-$gradient-indigo: linear-gradient(
-    97.54deg,
-    $indigo-primary 35.49%,
-    $indigo-secondary 165.37%
+$colors: (
+    white: #ffffff,
+    light-white: #f9f9f9,
+    accent: #eb9b00,
+    indigo-primary: #002f52,
+    indigo-secondary: #326589,
+    gradient-indigo: linear-gradient(97.54deg, #002f52 35.49%, #326589 165.37%),
+    solitude: #ebecee,
+    gray: #858585,
+    dark-gray: #474646,
 );
-$solitude: #ebecee;
-$gray: #858585;
-$dark-gray: #474646;
-$light-white: #f9f9f9;

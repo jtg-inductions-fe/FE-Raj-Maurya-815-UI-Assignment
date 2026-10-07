@@ -1,108 +1,76 @@
 @use '../abstracts/mixins' as mxn;
 @use '../abstracts/variables' as var;
 @use '../abstracts/colors' as clr;
+@use '../abstracts/functions' as fn;
 
 .best-sellers {
-    margin-top: 25px;
+    @include mxn.respond-to(mobile) {
+        margin-top: fn.to-rem(22px);
+    }
+    @include mxn.respond-to(tablet) {
+        margin-top: fn.to-rem(56px);
+    }
+    @include mxn.respond-to(desktop) {
+        margin-top: fn.to-rem(64px);
+    }
 
     &__heading {
-        text-align: center;
-        margin-bottom: 8px;
+        @include mxn.respond-to(mobile) {
+            text-align: center;
+            margin-bottom: fn.to-rem(8px);
+        }
+        @include mxn.respond-to(tablet) {
+            margin-bottom: fn.to-rem(16px);
+        }
+        @include mxn.respond-to(desktop) {
+            text-align: center;
+        }
     }
 
     &__content {
-        background-color: clr.$solitude;
-        padding-bottom: 15px;
-        min-height: 620px;
+        @include mxn.respond-to(mobile) {
+            background-color: map-get(clr.$colors, solitude);
+            padding-bottom: fn.to-rem(16px);
+        }
+        @include mxn.respond-to(tablet) {
+            @include mxn.flex-layout(column, $align: center);
+            padding-bottom: fn.to-rem(50px);
+        }
+        @include mxn.respond-to(desktop) {
+            @include mxn.flex-layout(row, center, flex-start);
+            padding-bottom: fn.to-rem(90px);
+            gap: fn.to-rem(48px);
+        }
     }
 
     &__card {
-        margin-top: 25px;
-    }
-
-    &__card-left {
-        margin-top: 8px;
-    }
-    &__card-left-icon {
-        margin-top: 36px;
-    }
-
-    @include mxn.respond-to(tablet) {
-        margin-top: 56px;
-
-        &__card {
-            margin-top: 32px;
+        @include mxn.respond-to(mobile) {
+            margin-top: fn.to-rem(24px);
+            padding-top: fn.to-rem(20px);
+            padding-bottom: fn.to-rem(20px);
         }
-
-        &__card-left {
-            margin-top: 0px;
-            p {
-                font-size: 14px;
-            }
-            h3 {
-                margin-bottom: 7px;
-            }
-            h4 {
-                margin-top: 0px;
-            }
+        @include mxn.respond-to(tablet) {
+            margin-top: fn.to-rem(32px);
         }
-
-        &__card-right {
-            img {
-                width: 161px;
-                height: 166px;
-            }
-            button {
-                width: 161px;
-                height: 48px;
-            }
-        }
-
-        &__heading {
-            margin-bottom: 16px;
-        }
-        &__content {
-            display: flex;
-            flex-direction: column;
-            align-items: center;
-            min-height: 762px;
+        @include mxn.respond-to(desktop) {
+            left: fn.to-rem(38px);
+            margin-top: fn.to-rem(82px);
+            padding-left: fn.to-rem(18px);
         }
     }
 
-    @include mxn.respond-to(desktop) {
-        margin-top: 63px;
-
-        &__content {
-            min-height: 506px;
-            align-items: stretch;
+    &__card-media {
+        @include mxn.respond-to(tablet) {
+            gap: fn.to-rem(8px);
         }
-
-        &__card {
-            left: 38px;
-            margin-top: 82px;
-            padding-left: 18px;
+        @include mxn.respond-to(desktop) {
+            gap: fn.to-rem(26px);
         }
-
-        &__card-left {
-            margin-top: 5px;
-            h3 {
-                width: 327;
-                height: 48px;
+        &-image {
+            @include mxn.respond-to(tablet) {
+                margin-top: fn.to-rem(6px);
+                width: fn.to-rem(160px);
             }
-            h4 {
-                margin-bottom: 14px;
-            }
-        }
-
-        &__heading {
-            text-align: center;
-        }
-        &__content {
-            display: flex;
-            flex-direction: row;
-            height: 506px;
-            justify-content: center;
-            gap: 48px;
         }
     }
 }

@@ -9,4 +9,12 @@
 @use 'base/fonts';
 @use 'layouts/recently-visited-topics';
 @use 'layouts/signup-email';
+@use 'components/icons';
+@use 'components/action';
+@use 'components/submenu';
+@use 'components/menu';
+@use 'components/brand-name';
+@use 'components/search';
+@use 'components/noscript';
+@use 'components/footer-column';
 @use 'layouts/footer';

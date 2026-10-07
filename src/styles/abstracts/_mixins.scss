@@ -2,27 +2,22 @@
 @use './variables' as var;
 
 @mixin respond-to($breakpoint-passed) {
-    @if map.has-key(var.$breakpoints, $breakpoint-passed) {
-        @media (min-width: map.get(var.$breakpoints,$breakpoint-passed)) {
-            @content;
-        }
-    } @else {
-        @error " breakpoint- #{$breakpoint-passed}, doesn't exist";
+    @media (min-width: map.get(var.$breakpoints,$breakpoint-passed)) {
+        @content;
     }
 }
 
-@mixin flex-center {
+@mixin flex-layout($direction: null, $justify: null, $align: null) {
     display: flex;
-    justify-content: center;
-    align-items: center;
+    flex-direction: $direction;
+    justify-content: $justify;
+    align-items: $align;
 }
 
-@mixin flex-space-between {
-    display: flex;
-    justify-content: space-between;
-}
-
-@mixin flex-alignitem-center {
-    display: flex;
-    align-items: center;
+@mixin font-face($font-family, $filename, $font-weight-key) {
+    @font-face {
+        font-family: $font-family;
+        src: url('/assets/fonts/#{$filename}.ttf') format('truetype');
+        font-weight: map-get(var.$font-weight, $font-weight-key);
+    }
 }

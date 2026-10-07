@@ -1,74 +1,33 @@
 @use '../abstracts/mixins' as mxn;
 @use '../abstracts/variables' as var;
 @use '../abstracts/colors' as clr;
+@use '../abstracts/functions' as fn;
 
 .footer {
-    background-color: clr.$light-white;
-    min-height: 65px;
-    padding-left: 24px;
-    padding-top: 16px;
+    background-color: map-get(clr.$colors, light-white);
+    @include mxn.respond-to(mobile) {
+        padding: fn.to-rem(16px) 0 fn.to-rem(24px) fn.to-rem(24px);
+    }
+    @include mxn.respond-to(tablet) {
+        padding: fn.to-rem(52px) fn.to-rem(60px) fn.to-rem(70px) fn.to-rem(24px);
+        @include mxn.flex-layout(row, space-between);
+        font-weight: map-get(var.$font-weight, regular);
+    }
+    @include mxn.respond-to(desktop) {
+        padding: fn.to-rem(52px) fn.to-rem(236px) fn.to-rem(56px)
+            fn.to-rem(212px);
+    }
 
     &__content {
-        display: none;
-    }
-
-    @include mxn.respond-to(tablet) {
-        padding: 56px 60px 70px 24px;
-        display: flex;
-        justify-content: space-between;
-        min-height: 513px;
-        font-size: map-get(var.$font-size, 'size-1');
-        font-weight: map-get(var.$font-weight, regular);
-
-        &__content {
-            max-width: 689px;
-            display: flex;
-            gap: 61px;
+        @include mxn.respond-to(mobile) {
+            display: none;
         }
-
-        &__education-heading,
-        &__online-education-heading,
-        &__community-heading {
-            color: clr.$gray;
+        @include mxn.respond-to(tablet) {
+            @include mxn.flex-layout(row);
+            gap: fn.to-rem(66px);
         }
-
-        &__education,
-        &__online-education,
-        &__community {
-            min-width: 189px;
-            color: clr.$dark-gray;
-            display: flex;
-            flex-direction: column;
-            gap: 25px;
-
-            &-content {
-                display: flex;
-                flex-direction: column;
-                gap: 16px;
-            }
-
-            &-item-link {
-                display: flex;
-                gap: 8px;
-                align-items: center;
-            }
-        }
-    }
-
-    @include mxn.respond-to(desktop) {
-        padding: 50px 236px 56px 212px;
-
-        &__content {
-            max-width: 1340px;
-            gap: 200px;
-        }
-
-        &__education,
-        &__online-education,
-        &__community {
-            min-width: 209px;
-            border-left: 1px solid clr.$gray;
-            padding-left: 20px;
+        @include mxn.respond-to(desktop) {
+            gap: fn.to-rem(200px);
         }
     }
 }
