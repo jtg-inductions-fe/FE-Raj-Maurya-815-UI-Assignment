@@ -1,0 +1,45 @@
+@use '../abstracts/mixins' as mxn;
+@use '../abstracts/variables' as var;
+@use '../abstracts/colors' as clr;
+@use '../abstracts/functions' as fn;
+
+.hero {
+    background: map-get(clr.$colors, gradient-indigo);
+    @include mxn.flex-layout(column, $align: center);
+    @include mxn.respond-to(mobile) {
+        margin-top: fn.to-rem(1px);
+        min-height: fn.to-rem(215px);
+    }
+    @include mxn.respond-to(tablet) {
+        margin-top: fn.to-rem(0px);
+        min-height: fn.to-rem(329px);
+    }
+
+    &__heading {
+        color: map-get(clr.$colors, white);
+        @include mxn.respond-to(mobile) {
+            margin-top: fn.to-rem(32px);
+            margin-bottom: fn.to-rem(8px);
+        }
+        @include mxn.respond-to(tablet) {
+            margin-top: fn.to-rem(84px);
+            margin-bottom: fn.to-rem(2px);
+            min-height: fn.to-rem(54px);
+        }
+    }
+
+    &__description {
+        color: map-get(clr.$colors, white);
+        text-align: center;
+        @include mxn.respond-to(mobile) {
+            min-height: fn.to-rem(48px);
+            margin-bottom: fn.to-rem(24px);
+            width: fn.to-rem(316px);
+        }
+        @include mxn.respond-to(tablet) {
+            min-height: fn.to-rem(24px);
+            width: fn.to-rem(479px);
+            margin-bottom: fn.to-rem(26px);
+        }
+    }
+}
