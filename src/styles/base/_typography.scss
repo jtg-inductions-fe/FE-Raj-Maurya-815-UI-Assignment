@@ -94,4 +94,12 @@
             font-weight: map-get(var.$font-weight, light);
         }
     }
+
+    &--xsm {
+        font-size: map-get(var.$font-size, 'sm');
+        font-weight: map-get(var.$font-weight, bold);
+        @include mxn.respond-to(tablet) {
+            font-size: map-get(var.$font-size, '2xl');
+        }
+    }
 }

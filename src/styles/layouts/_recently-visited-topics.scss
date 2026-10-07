@@ -1,0 +1,58 @@
+@use '../abstracts/mixins' as mxn;
+@use '../abstracts/variables' as var;
+@use '../abstracts/colors' as clr;
+@use '../abstracts/functions' as fn;
+
+.recently-visited-topics {
+    background: map-get(clr.$colors, gradient-indigo);
+    @include mxn.flex-layout(column, flex-start, center);
+    @include mxn.respond-to(mobile) {
+        margin-top: fn.to-rem(16px);
+        padding-bottom: fn.to-rem(24px);
+    }
+    @include mxn.respond-to(tablet) {
+        margin-top: fn.to-rem(0px);
+        padding-bottom: fn.to-rem(32px);
+    }
+
+    &__heading {
+        color: map-get(clr.$colors, white);
+        @include mxn.respond-to(mobile) {
+            margin-top: fn.to-rem(24px);
+            margin-bottom: fn.to-rem(32px);
+        }
+        @include mxn.respond-to(tablet) {
+            margin-top: fn.to-rem(32px);
+            margin-bottom: fn.to-rem(40px);
+        }
+        @include mxn.respond-to(desktop) {
+            margin-top: fn.to-rem(64px);
+        }
+    }
+
+    &__list {
+        @include mxn.flex-layout(row, center);
+        flex-wrap: wrap;
+        @include mxn.respond-to(mobile) {
+            gap: fn.to-rem(16px);
+        }
+        @include mxn.respond-to(tablet) {
+            width: fn.to-rem(900px);
+            gap: fn.to-rem(24px);
+        }
+    }
+
+    &__link {
+        @include mxn.flex-layout(row, center, center);
+        color: map-get(clr.$colors, white);
+        background-color: map-get(clr.$colors, accent);
+        @include mxn.respond-to(mobile) {
+            padding: fn.to-rem(16px) fn.to-rem(24px) fn.to-rem(16px)
+                fn.to-rem(24px);
+        }
+        @include mxn.respond-to(tablet) {
+            padding: fn.to-rem(24px) fn.to-rem(32px) fn.to-rem(24px)
+                fn.to-rem(32px);
+        }
+    }
+}
