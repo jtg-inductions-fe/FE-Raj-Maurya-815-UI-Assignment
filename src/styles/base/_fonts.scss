@@ -1,0 +1,9 @@
+@use '../abstracts/variables' as abs;
+@use '../abstracts/mixins' as mxn;
+
+@include mxn.font-face('Poppins', 'Poppins-Bold', bold);
+@include mxn.font-face('Poppins', 'Poppins-Light', light);
+@include mxn.font-face('Poppins', 'Poppins-Medium', medium);
+@include mxn.font-face('Poppins', 'Poppins-Regular', regular);
+@include mxn.font-face('JosefinSans', 'JosefinSans-Bold', bold);
+@include mxn.font-face('JosefinSans', 'JosefinSans-Regular', regular);

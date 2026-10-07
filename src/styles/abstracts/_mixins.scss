@@ -1,0 +1,23 @@
+@use 'sass:map';
+@use './variables' as var;
+
+@mixin respond-to($breakpoint-passed) {
+    @media (min-width: map.get(var.$breakpoints,$breakpoint-passed)) {
+        @content;
+    }
+}
+
+@mixin flex-layout($direction: null, $justify: null, $align: null) {
+    display: flex;
+    flex-direction: $direction;
+    justify-content: $justify;
+    align-items: $align;
+}
+
+@mixin font-face($font-family, $filename, $font-weight-key) {
+    @font-face {
+        font-family: $font-family;
+        src: url('/assets/fonts/#{$filename}.ttf') format('truetype');
+        font-weight: map-get(var.$font-weight, $font-weight-key);
+    }
+}
