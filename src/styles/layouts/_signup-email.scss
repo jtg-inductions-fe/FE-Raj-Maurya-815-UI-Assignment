@@ -43,8 +43,7 @@
     }
 
     &__heading,
-    &__description,
-    &__button-text {
+    &__description {
         background: -webkit-linear-gradient(
             map-get(clr.$colors, indigo-primary),
             map-get(clr.$colors, indigo-secondary)
@@ -72,6 +71,17 @@
         @include mxn.respond-to(desktop) {
             width: fn.to-rem(349px);
             margin-bottom: fn.to-rem(40px);
+        }
+
+        &-text {
+            background: -webkit-linear-gradient(
+                map-get(clr.$colors, indigo-primary),
+                map-get(clr.$colors, indigo-secondary)
+            );
+            -webkit-background-clip: text;
+            background-clip: text;
+            -webkit-text-fill-color: transparent;
+            color: transparent;
         }
     }
 }
