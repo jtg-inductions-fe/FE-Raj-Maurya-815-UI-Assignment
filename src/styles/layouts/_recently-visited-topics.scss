@@ -14,6 +14,9 @@
         margin-top: fn.to-rem(0px);
         padding-bottom: fn.to-rem(32px);
     }
+    @include mxn.respond-to(desktop) {
+        padding-bottom: fn.to-rem(74px);
+    }
 
     &__heading {
         color: map-get(clr.$colors, white);

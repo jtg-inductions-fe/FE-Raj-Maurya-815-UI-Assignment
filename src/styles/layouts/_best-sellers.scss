@@ -47,6 +47,7 @@
         @include mxn.respond-to(mobile) {
             margin-top: fn.to-rem(24px);
             padding-top: fn.to-rem(20px);
+            padding-bottom: fn.to-rem(20px);
         }
         @include mxn.respond-to(tablet) {
             margin-top: fn.to-rem(32px);

@@ -1,0 +1,87 @@
+@use '../abstracts/variables' as var;
+@use '../abstracts/mixins' as mxn;
+@use '../abstracts/colors' as clr;
+@use '../abstracts/functions' as fn;
+
+.signup-email {
+    gap: fn.to-rem(24px);
+    @include mxn.respond-to(mobile) {
+        @include mxn.flex-layout(column, flex-start, center);
+        margin: fn.to-rem(24px) fn.to-rem(24px) fn.to-rem(30px) fn.to-rem(24px);
+    }
+    @include mxn.respond-to(tablet) {
+        flex-direction: row;
+        justify-content: center;
+        margin: fn.to-rem(30px) auto fn.to-rem(53px) auto;
+    }
+    @include mxn.respond-to(desktop) {
+        margin: fn.to-rem(64px) auto fn.to-rem(28px) auto;
+    }
+
+    &__text {
+        @include mxn.respond-to(mobile) {
+            @include mxn.flex-layout(column);
+            gap: fn.to-rem(8px);
+        }
+        @include mxn.respond-to(tablet) {
+            width: fn.to-rem(372px);
+            gap: fn.to-rem(14px);
+        }
+        @include mxn.respond-to(desktop) {
+            width: fn.to-rem(401px);
+            gap: fn.to-rem(4px);
+        }
+    }
+
+    &__description {
+        @include mxn.respond-to(tablet) {
+            width: fn.to-rem(354px);
+        }
+        @include mxn.respond-to(desktop) {
+            width: fn.to-rem(378px);
+        }
+    }
+
+    &__heading,
+    &__description {
+        background: -webkit-linear-gradient(
+            map-get(clr.$colors, indigo-primary),
+            map-get(clr.$colors, indigo-secondary)
+        );
+        -webkit-background-clip: text;
+        background-clip: text;
+        -webkit-text-fill-color: transparent;
+        color: transparent;
+    }
+
+    &__button {
+        border: fn.to-rem(1px) solid map-get(clr.$colors, indigo-primary);
+        border-radius: fn.to-rem(24px);
+        padding-top: fn.to-rem(10px);
+        padding-bottom: fn.to-rem(10px);
+        padding-left: fn.to-rem(24px);
+        gap: fn.to-rem(10px);
+        @include mxn.flex-layout(row, $align: center);
+        @include mxn.respond-to(mobile) {
+            width: fn.to-rem(380px);
+        }
+        @include mxn.respond-to(tablet) {
+            width: fn.to-rem(326px);
+        }
+        @include mxn.respond-to(desktop) {
+            width: fn.to-rem(349px);
+            margin-bottom: fn.to-rem(40px);
+        }
+
+        &-text {
+            background: -webkit-linear-gradient(
+                map-get(clr.$colors, indigo-primary),
+                map-get(clr.$colors, indigo-secondary)
+            );
+            -webkit-background-clip: text;
+            background-clip: text;
+            -webkit-text-fill-color: transparent;
+            color: transparent;
+        }
+    }
+}
