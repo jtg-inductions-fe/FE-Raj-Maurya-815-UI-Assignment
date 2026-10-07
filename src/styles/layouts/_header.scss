@@ -51,6 +51,7 @@
                 left: 0%;
                 width: fn.to-rem(300px);
                 background-color: map-get(clr.$colors, white);
+                z-index: 10;
             }
         }
     }
