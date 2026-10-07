@@ -26,13 +26,13 @@
 
     &__icon {
         @include mxn.respond-to(mobile) {
-            margin-left: fn.to-rem(74.5px);
+            margin-left: fn.to-rem(74px);
         }
         @include mxn.respond-to(tablet) {
-            margin-left: fn.to-rem(108.5px);
+            margin-left: fn.to-rem(108px);
         }
         @include mxn.respond-to(desktop) {
-            margin-left: fn.to-rem(163.5px);
+            margin-left: fn.to-rem(164px);
         }
     }
 
@@ -53,7 +53,7 @@
 
         @include mxn.respond-to(mobile) {
             font-size: fn.to-rem(14px);
-            height: fn.to-rem(21px);
+            height: fn.to-rem(22px);
         }
         @include mxn.respond-to(tablet) {
             font-size: fn.to-rem(16px);

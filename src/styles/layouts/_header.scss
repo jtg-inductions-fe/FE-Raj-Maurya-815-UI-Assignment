@@ -9,7 +9,7 @@
     position: relative;
 
     @include mxn.respond-to(mobile) {
-        padding: fn.to-rem(20px) fn.to-rem(24px) fn.to-rem(23px) fn.to-rem(26px);
+        padding: fn.to-rem(20px) fn.to-rem(24px) fn.to-rem(24px) fn.to-rem(26px);
     }
     @include mxn.respond-to(tablet) {
         padding: fn.to-rem(18px) fn.to-rem(80px);
@@ -37,7 +37,6 @@
             display: none;
         }
         @include mxn.respond-to(tablet) {
-            min-width: fn.to-rem(437px);
             display: block;
             height: fn.to-rem(44px);
         }
@@ -76,7 +75,7 @@
     &__logo {
         @include mxn.respond-to(tablet) {
             @include mxn.flex-layout(row, center, center);
-            gap: fn.to-rem(11px);
+            gap: fn.to-rem(12px);
         }
         @include mxn.respond-to(desktop) {
             margin-right: fn.to-rem(58px);

@@ -51,18 +51,40 @@ window.addEventListener('resize', () => {
     }
 });
 
-new Swiper('.swiper', {
+new Swiper('.latest-releases .carousel__swiper', {
     modules: [Navigation, Pagination],
     slidesPerView: 2.15,
     centeredSlides: true,
 
     pagination: {
-        el: '.swiper-pagination',
+        el: '.latest-releases .swiper-pagination',
         clickable: true,
     },
     navigation: {
-        nextEl: '.swiper-button-next',
-        prevEl: '.swiper-button-prev',
+        nextEl: '.latest-releases .swiper-button-next',
+        prevEl: '.latest-releases .swiper-button-prev',
+    },
+
+    breakpoints: {
+        1024: {
+            slidesPerView: 3,
+            spaceBetween: 40,
+        },
+    },
+});
+
+new Swiper('.best-sellers  .carousel__swiper', {
+    modules: [Navigation, Pagination],
+    slidesPerView: 2.15,
+    centeredSlides: true,
+
+    pagination: {
+        el: '.best-sellers .swiper-pagination',
+        clickable: true,
+    },
+    navigation: {
+        nextEl: '.best-sellers .swiper-button-next',
+        prevEl: '.best-sellers .swiper-button-prev',
     },
 
     breakpoints: {

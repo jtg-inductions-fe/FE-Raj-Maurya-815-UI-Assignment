@@ -8,11 +8,11 @@
     @include mxn.flex-layout(column, $align: center);
     @include mxn.respond-to(mobile) {
         margin-top: fn.to-rem(1px);
-        min-height: fn.to-rem(215px);
+        padding-bottom: fn.to-rem(24px);
     }
     @include mxn.respond-to(tablet) {
         margin-top: fn.to-rem(0px);
-        min-height: fn.to-rem(329px);
+        padding-bottom: fn.to-rem(72px);
     }
 
     &__heading {
@@ -24,7 +24,6 @@
         @include mxn.respond-to(tablet) {
             margin-top: fn.to-rem(84px);
             margin-bottom: fn.to-rem(2px);
-            min-height: fn.to-rem(54px);
         }
     }
 
@@ -32,13 +31,11 @@
         color: map-get(clr.$colors, white);
         text-align: center;
         @include mxn.respond-to(mobile) {
-            min-height: fn.to-rem(48px);
             margin-bottom: fn.to-rem(24px);
             width: fn.to-rem(316px);
         }
         @include mxn.respond-to(tablet) {
-            min-height: fn.to-rem(24px);
-            width: fn.to-rem(479px);
+            width: fn.to-rem(480px);
             margin-bottom: fn.to-rem(26px);
         }
     }

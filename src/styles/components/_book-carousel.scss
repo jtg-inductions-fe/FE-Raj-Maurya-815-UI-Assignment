@@ -40,7 +40,7 @@
     position: relative !important;
     bottom: fn.to-rem(0px) !important;
     @include mxn.respond-to(mobile) {
-        margin-top: fn.to-rem(3px);
+        margin-top: fn.to-rem(4px);
         margin-bottom: fn.to-rem(8px);
     }
     @include mxn.respond-to(tablet) {
@@ -54,13 +54,13 @@
 
 .swiper-slide {
     @include mxn.respond-to(mobile) {
-        height: fn.to-rem(249px) !important;
+        height: fn.to-rem(248px) !important;
     }
     @include mxn.respond-to(tablet) {
         height: fn.to-rem(266px) !important;
     }
     @include mxn.respond-to(desktop) {
-        height: fn.to-rem(253px) !important;
+        height: fn.to-rem(252px) !important;
     }
 }
 
@@ -104,11 +104,11 @@
 
 .swiper-button-prev {
     @include mxn.respond-to(tablet) {
-        left: fn.to-rem(-29px) !important;
+        left: fn.to-rem(-28px) !important;
     }
 }
 .swiper-button-next {
     @include mxn.respond-to(tablet) {
-        right: fn.to-rem(-29px) !important;
+        right: fn.to-rem(-28px) !important;
     }
 }

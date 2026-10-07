@@ -52,7 +52,7 @@
         @include mxn.respond-to(tablet) {
             position: absolute;
             background-color: map-get(clr.$colors, white);
-            width: fn.to-rem(181px);
+            width: fn.to-rem(182px);
         }
     }
 }
