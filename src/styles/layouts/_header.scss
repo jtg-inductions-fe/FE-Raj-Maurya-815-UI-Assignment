@@ -1,0 +1,85 @@
+@use '../abstracts/mixins' as mxn;
+@use '../abstracts/variables' as var;
+@use '../abstracts/colors' as clr;
+@use '../abstracts/functions' as fn;
+
+.header {
+    @include mxn.flex-layout(row, space-between);
+    height: fn.to-rem(80px);
+    position: relative;
+
+    @include mxn.respond-to(mobile) {
+        padding: fn.to-rem(20px) fn.to-rem(24px) fn.to-rem(23px) fn.to-rem(26px);
+    }
+    @include mxn.respond-to(tablet) {
+        padding: fn.to-rem(18px) fn.to-rem(80px);
+    }
+    @include mxn.respond-to(desktop) {
+        padding-top: fn.to-rem(20px);
+    }
+
+    &__brand {
+        @include mxn.flex-layout(row, space-between);
+        @include mxn.respond-to(mobile) {
+            width: fn.to-rem(112px);
+            height: fn.to-rem(48px);
+        }
+        @include mxn.respond-to(tablet) {
+            width: fn.to-rem(264px);
+        }
+        @include mxn.respond-to(desktop) {
+            height: fn.to-rem(40px);
+        }
+    }
+
+    &__nav {
+        @include mxn.respond-to(mobile) {
+            display: none;
+        }
+        @include mxn.respond-to(tablet) {
+            min-width: fn.to-rem(437px);
+            display: block;
+            height: fn.to-rem(44px);
+        }
+        @include mxn.respond-to(desktop) {
+            width: fn.to-rem(932px);
+        }
+        &--open {
+            @include mxn.respond-to(mobile) {
+                display: block;
+                position: absolute;
+                top: 100%;
+                left: 0%;
+                width: fn.to-rem(300px);
+                background-color: map-get(clr.$colors, white);
+            }
+        }
+    }
+
+    &__menu {
+        @include mxn.respond-to(tablet) {
+            width: 100%;
+            height: 100%;
+            @include mxn.flex-layout(row, space-between);
+        }
+        @include mxn.respond-to(desktop) {
+            justify-content: flex-start;
+        }
+    }
+
+    &__hamburger {
+        @include mxn.respond-to(tablet) {
+            display: none;
+        }
+    }
+
+    &__logo {
+        @include mxn.respond-to(tablet) {
+            @include mxn.flex-layout(row, center, center);
+            gap: fn.to-rem(11px);
+        }
+        @include mxn.respond-to(desktop) {
+            margin-right: fn.to-rem(58px);
+        }
+    }
+}

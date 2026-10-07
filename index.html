@@ -13,7 +13,95 @@
                 Enable javascript to use this website
             </p>
         </noscript>
-        <div>Hello World</div>
+        <header class="header">
+            <div class="header__brand">
+                <button class="header__hamburger icon-opacity">
+                    <img src="/assets/icons/Menu.svg" alt="menu button" />
+                </button>
+
+                <a href="#" class="header__logo logo">
+                    <img
+                        class="logo__icon"
+                        src="/assets/icons/Logo.svg"
+                        alt="alurobooks logo"
+                    />
+                    <div class="logo__name name">
+                        <span class="name__primary">Alura</span>
+                        <span class="name__secondary">Books</span>
+                    </div>
+                </a>
+            </div>
+            <nav class="header__nav">
+                <ul class="header__menu menu">
+                    <li class="menu__item">
+                        <button class="menu__btn">categories</button>
+                        <ul class="menu__submenu submenu">
+                            <li class="submenu__item">
+                                <a class="submenu__link" href="#">
+                                    programming
+                                </a>
+                            </li>
+                            <li class="submenu__item">
+                                <a class="submenu__link" href="#">
+                                    front-end
+                                </a>
+                            </li>
+                            <li class="submenu__item">
+                                <a class="submenu__link" href="#">
+                                    infrastructure
+                                </a>
+                            </li>
+                            <li class="submenu__item">
+                                <a class="submenu__link" href="#"> business </a>
+                            </li>
+                            <li class="submenu__item">
+                                <a class="submenu__link" href="#">
+                                    design & ux
+                                </a>
+                            </li>
+                        </ul>
+                    </li>
+
+                    <li class="menu__item">
+                        <button class="menu__btn">favorites</button>
+                    </li>
+
+                    <li class="menu__item">
+                        <button class="menu__btn">my bookshelf</button>
+                    </li>
+                </ul>
+            </nav>
+
+            <ul class="header__action action">
+                <li class="action__item">
+                    <a href="#" class="icon-opacity action__link"
+                        ><img
+                            class="action__image"
+                            src="/assets/icons/Favoritos_header.svg"
+                            alt="wishlist"
+                    /></a>
+                </li>
+                <li class="action__item">
+                    <a href="#" class="icon-opacity action__link"
+                        ><img
+                            src="/assets/icons/bag.svg"
+                            alt="cart"
+                            class="action__image"
+                        /><span class="action__name">my bag</span></a
+                    >
+                </li>
+                <li class="action__item">
+                    <a href="#" class="icon-opacity action__link"
+                        ><img
+                            class="action__image"
+                            src="/assets/icons/profile.svg"
+                            alt="profile"
+                        /><span class="action__name">my profile</span></a
+                    >
+                </li>
+            </ul>
+        </header>
+
         <script type="module" src="./src/script/index.js"></script>
     </body>
 </html>
