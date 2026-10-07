@@ -1,0 +1,35 @@
+@use '../abstracts/mixins' as mxn;
+@use '../abstracts/variables' as var;
+@use '../abstracts/colors' as clr;
+@use '../abstracts/functions' as fn;
+
+.footer-column {
+    @include mxn.respond-to(tablet) {
+        color: map-get(clr.$colors, dark-gray);
+        font-size: map-get(var.$font-size, 'sm');
+        @include mxn.flex-layout(column);
+        gap: fn.to-rem(25px);
+    }
+    @include mxn.respond-to(desktop) {
+        border-left: fn.to-rem(1px) solid map-get(clr.$colors, gray);
+        padding-left: fn.to-rem(20px);
+    }
+
+    &__heading {
+        color: map-get(clr.$colors, gray);
+    }
+
+    &__list {
+        @include mxn.respond-to(tablet) {
+            @include mxn.flex-layout(column);
+            gap: fn.to-rem(16px);
+        }
+    }
+
+    &__item-link {
+        @include mxn.respond-to(tablet) {
+            @include mxn.flex-layout(row, $align: center);
+            gap: fn.to-rem(8px);
+        }
+    }
+}

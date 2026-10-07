@@ -27,6 +27,15 @@
         }
     }
 
+    &--md {
+        font-size: map-get(var.$font-size, 'md');
+        font-weight: map-get(var.$font-weight, regular);
+
+        @include mxn.respond-to(tablet) {
+            font-size: map-get(var.$font-size, '2xl');
+        }
+    }
+
     &--sm {
         @include mxn.respond-to(mobile) {
             font-size: map-get(var.$font-size, 'lg');
@@ -76,6 +85,11 @@
         @include mxn.respond-to(desktop) {
             font-size: map-get(var.$font-size, '4xl');
         }
+    }
+
+    &--sm {
+        font-size: map-get(var.$font-size, 'sm');
+        font-weight: map-get(var.$font-weight, regular);
     }
 }
 

@@ -1,0 +1,33 @@
+@use '../abstracts/mixins' as mxn;
+@use '../abstracts/variables' as var;
+@use '../abstracts/colors' as clr;
+@use '../abstracts/functions' as fn;
+
+.footer {
+    background-color: map-get(clr.$colors, light-white);
+    @include mxn.respond-to(mobile) {
+        padding: fn.to-rem(16px) 0 fn.to-rem(24px) fn.to-rem(24px);
+    }
+    @include mxn.respond-to(tablet) {
+        padding: fn.to-rem(52px) fn.to-rem(60px) fn.to-rem(70px) fn.to-rem(24px);
+        @include mxn.flex-layout(row, space-between);
+        font-weight: map-get(var.$font-weight, regular);
+    }
+    @include mxn.respond-to(desktop) {
+        padding: fn.to-rem(52px) fn.to-rem(236px) fn.to-rem(56px)
+            fn.to-rem(212px);
+    }
+
+    &__content {
+        @include mxn.respond-to(mobile) {
+            display: none;
+        }
+        @include mxn.respond-to(tablet) {
+            @include mxn.flex-layout(row);
+            gap: fn.to-rem(66px);
+        }
+        @include mxn.respond-to(desktop) {
+            gap: fn.to-rem(200px);
+        }
+    }
+}
