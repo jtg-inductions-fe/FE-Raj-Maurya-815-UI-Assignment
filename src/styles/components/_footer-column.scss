@@ -26,7 +26,7 @@
         }
     }
 
-    &__link {
+    &__item-link {
         @include mxn.respond-to(tablet) {
             @include mxn.flex-layout(row, $align: center);
             gap: fn.to-rem(8px);
