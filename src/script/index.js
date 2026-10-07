@@ -1,3 +1,9 @@
+import Swiper from 'swiper';
+import 'swiper/css';
+import 'swiper/css/pagination';
+import 'swiper/css/navigation';
+import { Navigation, Pagination } from 'swiper/modules';
+
 const hamburger = document.querySelector('.header__hamburger');
 const nav = document.querySelector('.header__nav');
 const category = document.querySelector('.menu__btn');
@@ -43,4 +49,26 @@ window.addEventListener('resize', () => {
         nav.classList.remove('header__nav--open');
         categorySubmenu.classList.remove('submenu--open');
     }
+});
+
+new Swiper('.swiper', {
+    modules: [Navigation, Pagination],
+    slidesPerView: 2.15,
+    centeredSlides: true,
+
+    pagination: {
+        el: '.swiper-pagination',
+        clickable: true,
+    },
+    navigation: {
+        nextEl: '.swiper-button-next',
+        prevEl: '.swiper-button-prev',
+    },
+
+    breakpoints: {
+        1024: {
+            slidesPerView: 3,
+            spaceBetween: 40,
+        },
+    },
 });

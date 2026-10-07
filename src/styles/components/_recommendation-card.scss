@@ -1,0 +1,129 @@
+@use '../abstracts/mixins' as mxn;
+@use '../abstracts/variables' as var;
+@use '../abstracts/colors' as clr;
+@use '../abstracts/functions' as fn;
+
+.recommendation-card {
+    background-color: map-get(clr.$colors, white);
+    @include mxn.flex-layout(row, space-between);
+    border-radius: fn.to-rem(10px);
+    box-shadow: fn.to-rem(0px) fn.to-rem(4px) fn.to-rem(4px) fn.to-rem(0px)
+        #00000040;
+    @include mxn.respond-to(mobile) {
+        width: fn.to-rem(380px);
+        min-height: fn.to-rem(295px);
+        margin: fn.to-rem(20px) auto fn.to-rem(0px) auto;
+        padding: fn.to-rem(16px) fn.to-rem(16px) fn.to-rem(25px) fn.to-rem(16px);
+    }
+    @include mxn.respond-to(tablet) {
+        width: fn.to-rem(588px);
+        min-height: fn.to-rem(266px);
+        margin-top: fn.to-rem(32px);
+        padding: fn.to-rem(23px) fn.to-rem(23px) fn.to-rem(22px) fn.to-rem(16px);
+    }
+    @include mxn.respond-to(desktop) {
+        min-height: fn.to-rem(278px);
+        margin-top: fn.to-rem(16px);
+        margin-left: fn.to-rem(0px);
+        margin-right: fn.to-rem(0px);
+        padding: fn.to-rem(16px) fn.to-rem(23px) fn.to-rem(16px) fn.to-rem(14px);
+        position: relative;
+        left: fn.to-rem(24px);
+    }
+
+    &__content {
+        width: fn.to-rem(254px);
+        @include mxn.flex-layout(column);
+    }
+
+    &__heading {
+        color: map-get(clr.$colors, accent);
+        @include mxn.respond-to(mobile) {
+            margin-bottom: fn.to-rem(9px);
+            width: fn.to-rem(179px);
+            min-height: fn.to-rem(48px);
+        }
+        @include mxn.respond-to(tablet) {
+            width: fn.to-rem(318px);
+            min-height: fn.to-rem(24px);
+        }
+        @include mxn.respond-to(desktop) {
+            width: fn.to-rem(385px);
+            margin-bottom: fn.to-rem(2px);
+        }
+    }
+
+    &__subheading {
+        color: map-get(clr.$colors, indigo-primary);
+        margin-bottom: fn.to-rem(8px);
+        @include mxn.respond-to(mobile) {
+            width: fn.to-rem(143px);
+            min-height: fn.to-rem(54px);
+        }
+        @include mxn.respond-to(tablet) {
+            width: fn.to-rem(217px);
+            min-height: fn.to-rem(27px);
+        }
+    }
+
+    &__description {
+        margin-bottom: fn.to-rem(18px);
+        @include mxn.respond-to(mobile) {
+            width: fn.to-rem(148px);
+        }
+        @include mxn.respond-to(tablet) {
+            width: fn.to-rem(318px);
+        }
+    }
+
+    &__actions {
+        @include mxn.respond-to(mobile) {
+            @include mxn.flex-layout(row, flex-start);
+            gap: fn.to-rem(28px);
+            margin-left: fn.to-rem(11px);
+        }
+        @include mxn.respond-to(tablet) {
+            margin-top: auto;
+            margin-left: fn.to-rem(0px);
+        }
+    }
+
+    &__media {
+        @include mxn.flex-layout(column, space-between);
+        @include mxn.respond-to(mobile) {
+            gap: fn.to-rem(35px);
+        }
+        @include mxn.respond-to(tablet) {
+            gap: fn.to-rem(21.59px);
+        }
+        @include mxn.respond-to(desktop) {
+            margin-right: fn.to-rem(2px);
+        }
+
+        &-image {
+            @include mxn.respond-to(mobile) {
+                margin-top: fn.to-rem(5px);
+            }
+            @include mxn.respond-to(tablet) {
+                margin-top: fn.to-rem(0px);
+                min-height: fn.to-rem(151.41px);
+                width: fn.to-rem(146px);
+            }
+            @include mxn.respond-to(desktop) {
+                margin-top: fn.to-rem(8px);
+            }
+        }
+
+        &-button {
+            color: map-get(clr.$colors, white);
+            min-height: fn.to-rem(48px);
+            background-color: map-get(clr.$colors, accent);
+            @include mxn.respond-to(mobile) {
+                width: fn.to-rem(161px);
+            }
+            @include mxn.respond-to(tablet) {
+                width: fn.to-rem(146px);
+            }
+        }
+    }
+}
