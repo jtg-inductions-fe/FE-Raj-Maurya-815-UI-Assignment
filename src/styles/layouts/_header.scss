@@ -71,6 +71,21 @@
         @include mxn.respond-to(tablet) {
             display: none;
         }
+        &--open {
+            display: block;
+        }
+        &--close {
+            display: none;
+            width: 50px;
+        }
+
+        &.is-open &--open {
+            display: none;
+        }
+
+        &.is-open &--close {
+            display: block;
+        }
     }
 
     &__logo {

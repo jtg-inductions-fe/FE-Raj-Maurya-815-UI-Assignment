@@ -30,6 +30,9 @@
         @include mxn.respond-to(tablet) {
             @include mxn.flex-layout(row, $align: center);
             gap: fn.to-rem(8px);
+            &:hover {
+                outline: solid fn.to-rem(0.5px) map-get(clr.$colors, gray);
+            }
         }
     }
 }

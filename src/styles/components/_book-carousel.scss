@@ -65,6 +65,11 @@
 }
 
 .swiper-pagination-bullet {
+    &:focus-visible {
+        outline: 2px solid map-get(clr.$colors, indigo-primary) !important;
+        outline-offset: 3px !important;
+        border-radius: 50% !important;
+    }
     @include mxn.respond-to(tablet) {
         width: fn.to-rem(12px) !important;
         height: fn.to-rem(12px) !important;
@@ -74,6 +79,11 @@
 
 .swiper-pagination-bullet-active {
     background-color: map-get(clr.$colors, indigo-primary) !important;
+    &:focus-visible {
+        outline: 2px solid map-get(clr.$colors, indigo-primary) !important;
+        outline-offset: 3px !important;
+        border-radius: 50% !important;
+    }
 }
 
 .swiper-button-prev,

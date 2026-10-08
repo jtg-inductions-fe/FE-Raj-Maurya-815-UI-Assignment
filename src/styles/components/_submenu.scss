@@ -8,7 +8,6 @@
     &__link {
         display: block;
         line-height: fn.to-rem(56px);
-        text-transform: uppercase;
         -webkit-background-clip: text;
         background-clip: text;
         background: -webkit-linear-gradient(
@@ -19,12 +18,14 @@
         -webkit-text-fill-color: transparent;
         color: transparent;
         @include mxn.respond-to(mobile) {
+            text-transform: unset;
             padding-left: fn.to-rem(20px);
             &:hover {
                 font-weight: map-get(var.$font-weight, medium);
             }
         }
         @include mxn.respond-to(tablet) {
+            text-transform: uppercase;
             padding-left: fn.to-rem(24px);
             height: fn.to-rem(64px);
             @include mxn.flex-layout(row, $align: center);
@@ -37,7 +38,6 @@
     }
     &__item {
         @include mxn.respond-to(mobile) {
-            width: fn.to-rem(300px);
             height: fn.to-rem(56px);
             margin-left: fn.to-rem(24px);
         }
