@@ -2,7 +2,7 @@ import Swiper from 'swiper';
 import 'swiper/css';
 import 'swiper/css/pagination';
 import 'swiper/css/navigation';
-import { Navigation, Pagination } from 'swiper/modules';
+import { Navigation, Pagination, A11y } from 'swiper/modules';
 
 const hamburger = document.querySelector('.header__hamburger');
 const nav = document.querySelector('.header__nav');
@@ -13,8 +13,10 @@ const categorySubmenu = document.querySelector('.submenu');
 document.addEventListener('click', (e) => {
     if (hamburger.contains(e.target)) {
         nav.classList.toggle('header__nav--open');
+        hamburger.classList.toggle('is-open');
     } else if (!nav.contains(e.target)) {
         nav.classList.remove('header__nav--open');
+        hamburger.classList.remove('is-open');
     }
 });
 
@@ -36,10 +38,10 @@ document.addEventListener('click', (e) => {
     if (window.innerWidth < 1024) {
         if (category.contains(e.target)) {
             categorySubmenu.classList.toggle('submenu--open');
-            category.classList.toggle('menu-btn--active');
+            category.classList.toggle('menu__btn--active');
         } else if (!categorySubmenu.contains(e.target)) {
             categorySubmenu.classList.remove('submenu--open');
-            category.classList.remove('menu-btn--active');
+            category.classList.remove('menu__btn--active');
         }
     }
 });
@@ -52,10 +54,12 @@ window.addEventListener('resize', () => {
 });
 
 new Swiper('.latest-releases .carousel__swiper', {
-    modules: [Navigation, Pagination],
+    modules: [Navigation, Pagination, A11y],
     slidesPerView: 2.15,
     centeredSlides: true,
-
+    a11y: {
+        enabled: true,
+    },
     pagination: {
         el: '.latest-releases .swiper-pagination',
         clickable: true,
@@ -74,10 +78,12 @@ new Swiper('.latest-releases .carousel__swiper', {
 });
 
 new Swiper('.best-sellers  .carousel__swiper', {
-    modules: [Navigation, Pagination],
+    modules: [Navigation, Pagination, A11y],
     slidesPerView: 2.15,
     centeredSlides: true,
-
+    a11y: {
+        enabled: true,
+    },
     pagination: {
         el: '.best-sellers .swiper-pagination',
         clickable: true,
